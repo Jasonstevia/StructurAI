@@ -1,0 +1,11 @@
+pydantic>=2.13
+google-genai>=1.73
+ezdxf>=1.4
+fastapi>=0.136
+uvicorn>=0.38
+python-multipart>=0.0.20
+rich>=15.0
+typer>=0.24
+# Optional for production-grade native BIM authoring:
+# ifcopenshell
+

@@ -1,0 +1,1134 @@
+{
+  "project_id": "structurai-project",
+  "title": "RC Pump Room",
+  "units": "mm",
+  "description": "AI-generated reinforced concrete small-room structural drafting package, 6200x6200mm.",
+  "levels": [
+    {
+      "id": "L-FOUNDATION",
+      "elevation_mm": -500.0,
+      "name": "Foundation Top"
+    },
+    {
+      "id": "L-GROUND",
+      "elevation_mm": 0.0,
+      "name": "Ground Floor"
+    },
+    {
+      "id": "L-ROOF",
+      "elevation_mm": 3000.0,
+      "name": "Roof"
+    }
+  ],
+  "grid_lines": [
+    {
+      "id": "GX-1",
+      "axis": "x",
+      "offset_mm": 0.0,
+      "label": "1"
+    },
+    {
+      "id": "GX-2",
+      "axis": "x",
+      "offset_mm": 6200.0,
+      "label": "2"
+    },
+    {
+      "id": "GY-A",
+      "axis": "y",
+      "offset_mm": 0.0,
+      "label": "A"
+    },
+    {
+      "id": "GY-B",
+      "axis": "y",
+      "offset_mm": 3100.0,
+      "label": "B"
+    },
+    {
+      "id": "GY-C",
+      "axis": "y",
+      "offset_mm": 6200.0,
+      "label": "C"
+    }
+  ],
+  "footings": [
+    {
+      "id": "F1",
+      "center": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "width_mm": 1500.0,
+      "length_mm": 1500.0,
+      "depth_mm": 500.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "center": {
+        "x": 6200.0,
+        "y": 0.0
+      },
+      "width_mm": 1500.0,
+      "length_mm": 1500.0,
+      "depth_mm": 500.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "center": {
+        "x": 0.0,
+        "y": 3100.0
+      },
+      "width_mm": 1500.0,
+      "length_mm": 1500.0,
+      "depth_mm": 500.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "center": {
+        "x": 6200.0,
+        "y": 3100.0
+      },
+      "width_mm": 1500.0,
+      "length_mm": 1500.0,
+      "depth_mm": 500.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F5",
+      "center": {
+        "x": 0.0,
+        "y": 6200.0
+      },
+      "width_mm": 1500.0,
+      "length_mm": 1500.0,
+      "depth_mm": 500.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F6",
+      "center": {
+        "x": 6200.0,
+        "y": 6200.0
+      },
+      "width_mm": 1500.0,
+      "length_mm": 1500.0,
+      "depth_mm": 500.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "columns": [
+    {
+      "id": "C1",
+      "center": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "center": {
+        "x": 6200.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "center": {
+        "x": 0.0,
+        "y": 3100.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "center": {
+        "x": 6200.0,
+        "y": 3100.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "center": {
+        "x": 0.0,
+        "y": 6200.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "center": {
+        "x": 6200.0,
+        "y": 6200.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "beams": [
+    {
+      "id": "B1",
+      "start": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 6200.0,
+        "y": 0.0
+      },
+      "width_mm": 250.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-TOP",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-BOT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "start": {
+        "x": 0.0,
+        "y": 3100.0
+      },
+      "end": {
+        "x": 6200.0,
+        "y": 3100.0
+      },
+      "width_mm": 250.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-TOP",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-BOT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B3",
+      "start": {
+        "x": 0.0,
+        "y": 6200.0
+      },
+      "end": {
+        "x": 6200.0,
+        "y": 6200.0
+      },
+      "width_mm": 250.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-TOP",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-BOT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B4",
+      "start": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 3100.0
+      },
+      "width_mm": 250.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-TOP",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-BOT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B5",
+      "start": {
+        "x": 0.0,
+        "y": 3100.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 6200.0
+      },
+      "width_mm": 250.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-TOP",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-BOT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B6",
+      "start": {
+        "x": 6200.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 6200.0,
+        "y": 3100.0
+      },
+      "width_mm": 250.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-TOP",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-BOT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B7",
+      "start": {
+        "x": 6200.0,
+        "y": 3100.0
+      },
+      "end": {
+        "x": 6200.0,
+        "y": 6200.0
+      },
+      "width_mm": 250.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-TOP",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-BOT",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 50,
+          "note": ""
+        },
+        {
+          "mark": "B-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "slabs": [
+    {
+      "id": "S1",
+      "boundary": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 6200.0,
+          "y": 0.0
+        },
+        {
+          "x": 6200.0,
+          "y": 6200.0
+        },
+        {
+          "x": 0.0,
+          "y": 6200.0
+        }
+      ],
+      "thickness_mm": 150.0,
+      "elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "S-X",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 30,
+          "note": ""
+        },
+        {
+          "mark": "S-Y",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 30,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "drawing_package": {
+    "views": [
+      {
+        "id": "V-FOUNDATION",
+        "view_type": "foundation_plan",
+        "title": "Foundation Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-ROOF",
+        "view_type": "roof_framing_plan",
+        "title": "Roof Framing Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-SECTION-A",
+        "view_type": "section",
+        "title": "Section A-A",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-SECTION-B",
+        "view_type": "section",
+        "title": "Section B-B",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-FOOTING-DETAIL",
+        "view_type": "detail",
+        "title": "Isolated Footing Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-COLUMN-DETAIL",
+        "view_type": "detail",
+        "title": "Column Reinforcement Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-ROOF-DETAIL",
+        "view_type": "detail",
+        "title": "Roof Slab Reinforcement Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-BBS",
+        "view_type": "schedule",
+        "title": "Bar Bending Schedule",
+        "scale": "1:50",
+        "notes": []
+      }
+    ],
+    "dimensions": [
+      {
+        "id": "D-WIDTH-TOTAL",
+        "start": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 6200.0,
+          "y": 0.0
+        },
+        "offset_mm": -1100.0,
+        "label": "6200"
+      },
+      {
+        "id": "D-LENGTH-TOTAL",
+        "start": {
+          "x": 6200.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 6200.0,
+          "y": 6200.0
+        },
+        "offset_mm": 1100.0,
+        "label": "6200"
+      },
+      {
+        "id": "D-X-BAY-1",
+        "start": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 6200.0,
+          "y": 0.0
+        },
+        "offset_mm": -700.0,
+        "label": "6200"
+      },
+      {
+        "id": "D-Y-BAY-1",
+        "start": {
+          "x": 6200.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 6200.0,
+          "y": 3100.0
+        },
+        "offset_mm": 700.0,
+        "label": "3100"
+      },
+      {
+        "id": "D-Y-BAY-2",
+        "start": {
+          "x": 6200.0,
+          "y": 3100.0
+        },
+        "end": {
+          "x": 6200.0,
+          "y": 6200.0
+        },
+        "offset_mm": 700.0,
+        "label": "3100"
+      }
+    ],
+    "sections": [
+      {
+        "id": "SEC-A",
+        "label": "A-A",
+        "start": {
+          "x": -500.0,
+          "y": 3100.0
+        },
+        "end": {
+          "x": 6700.0,
+          "y": 3100.0
+        },
+        "target_view_id": null
+      },
+      {
+        "id": "SEC-B",
+        "label": "B-B",
+        "start": {
+          "x": 3100.0,
+          "y": -500.0
+        },
+        "end": {
+          "x": 3100.0,
+          "y": 6700.0
+        },
+        "target_view_id": null
+      }
+    ],
+    "details": [
+      {
+        "id": "DET-FOOTING-PLAN-SECTION",
+        "detail_type": "isolated_footing",
+        "title": "Typical Isolated Footing Plan and Section",
+        "source_entity_id": "F1",
+        "scale": "1:25",
+        "parameters": {
+          "show_rebar": true,
+          "show_cover": true,
+          "show_subgrade": true
+        }
+      },
+      {
+        "id": "DET-COLUMN-STARTER",
+        "detail_type": "column_reinforcement",
+        "title": "Typical Column Starter Bars and Ties",
+        "source_entity_id": "C1",
+        "scale": "1:25",
+        "parameters": {
+          "lap_length_mm": 650,
+          "starter_projection_mm": 600
+        }
+      },
+      {
+        "id": "DET-ROOF-SLAB",
+        "detail_type": "roof_slab_reinforcement",
+        "title": "Typical Roof Slab Reinforcement",
+        "source_entity_id": "S1",
+        "scale": "1:25",
+        "parameters": {
+          "top_cover_mm": 30,
+          "bottom_cover_mm": 30
+        }
+      }
+    ],
+    "schedules": [
+      {
+        "id": "SCH-BBS",
+        "schedule_type": "bar_bending",
+        "title": "Bar Bending Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-FOOTING",
+        "schedule_type": "footing",
+        "title": "Footing Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-COLUMN",
+        "schedule_type": "column",
+        "title": "Column Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-MATERIAL",
+        "schedule_type": "material_takeoff",
+        "title": "Concrete and Rebar Takeoff",
+        "source_entity_ids": []
+      }
+    ],
+    "sheets": [
+      {
+        "id": "SHT-S-001",
+        "number": "S-001",
+        "title": "General Structural Arrangement",
+        "scale": "AS SHOWN",
+        "view_ids": [
+          "V-FOUNDATION",
+          "V-ROOF",
+          "V-SECTION-A",
+          "V-SECTION-B"
+        ]
+      },
+      {
+        "id": "SHT-S-002",
+        "number": "S-002",
+        "title": "Reinforcement Details and Schedules",
+        "scale": "AS SHOWN",
+        "view_ids": [
+          "V-FOOTING-DETAIL",
+          "V-COLUMN-DETAIL",
+          "V-ROOF-DETAIL",
+          "V-BBS"
+        ]
+      }
+    ],
+    "drafting_standard": {
+      "name": "StructurAI Professional RC",
+      "base_text_height_mm": 150.0,
+      "title_text_height_mm": 260.0,
+      "dimension_text_height_mm": 120.0,
+      "layer_prefix": "SAI",
+      "default_plan_scale": "1:50",
+      "default_detail_scale": "1:25"
+    },
+    "general_notes": [
+      "All dimensions are in millimeters unless noted otherwise.",
+      "Concrete grade C30 assumed for MVP drafting package; engineer to verify.",
+      "Reinforcement cover: 75mm for footings, 40mm for columns/beams/slabs unless noted.",
+      "This package is generated for engineer review and coordination, not final sealed design."
+    ]
+  },
+  "extracted_context": null,
+  "assumptions": [
+    "Rectangular reinforced-concrete room footprint inferred from prompt.",
+    "Support grid selected parametrically from room span, with intermediate supports when bay lengths exceed commercial drafting thresholds.",
+    "Roof slab assumed at +3000mm with perimeter beams."
+  ],
+  "change_log": [
+    "Added Level L-FOUNDATION.",
+    "Added Level L-GROUND.",
+    "Added Level L-ROOF.",
+    "Added GridLine GX-1.",
+    "Added GridLine GX-2.",
+    "Added GridLine GY-A.",
+    "Added GridLine GY-B.",
+    "Added GridLine GY-C.",
+    "Added Footing F1.",
+    "Added Column C1.",
+    "Added Footing F2.",
+    "Added Column C2.",
+    "Added Footing F3.",
+    "Added Column C3.",
+    "Added Footing F4.",
+    "Added Column C4.",
+    "Added Footing F5.",
+    "Added Column C5.",
+    "Added Footing F6.",
+    "Added Column C6.",
+    "Added Beam B1.",
+    "Added Beam B2.",
+    "Added Beam B3.",
+    "Added Beam B4.",
+    "Added Beam B5.",
+    "Added Beam B6.",
+    "Added Beam B7.",
+    "Added Slab S1.",
+    "Added Dimension D-WIDTH-TOTAL.",
+    "Added Dimension D-LENGTH-TOTAL.",
+    "Added Dimension D-X-BAY-1.",
+    "Added Dimension D-Y-BAY-1.",
+    "Added Dimension D-Y-BAY-2.",
+    "Added SectionMarker SEC-A.",
+    "Added SectionMarker SEC-B.",
+    "Added DrawingView V-FOUNDATION.",
+    "Added DrawingView V-ROOF.",
+    "Added DrawingView V-SECTION-A.",
+    "Added DrawingView V-SECTION-B.",
+    "Added DrawingView V-FOOTING-DETAIL.",
+    "Added DrawingView V-COLUMN-DETAIL.",
+    "Added DrawingView V-ROOF-DETAIL.",
+    "Added DrawingView V-BBS.",
+    "Added DetailCallout DET-FOOTING-PLAN-SECTION.",
+    "Added DetailCallout DET-COLUMN-STARTER.",
+    "Added DetailCallout DET-ROOF-SLAB.",
+    "Added ScheduleDefinition SCH-BBS.",
+    "Added ScheduleDefinition SCH-FOOTING.",
+    "Added ScheduleDefinition SCH-COLUMN.",
+    "Added ScheduleDefinition SCH-MATERIAL.",
+    "Added SheetDefinition SHT-S-001.",
+    "Added SheetDefinition SHT-S-002.",
+    "Updated DrawingView V-FOUNDATION.",
+    "Updated DrawingView V-ROOF.",
+    "Updated DrawingView V-SECTION-A.",
+    "Updated DrawingView V-SECTION-B.",
+    "Updated DrawingView V-FOOTING-DETAIL.",
+    "Updated DrawingView V-COLUMN-DETAIL.",
+    "Updated DrawingView V-ROOF-DETAIL.",
+    "Updated DrawingView V-BBS.",
+    "Updated DetailCallout DET-FOOTING-PLAN-SECTION.",
+    "Updated DetailCallout DET-COLUMN-STARTER.",
+    "Updated DetailCallout DET-ROOF-SLAB.",
+    "Updated ScheduleDefinition SCH-BBS.",
+    "Updated ScheduleDefinition SCH-FOOTING.",
+    "Updated ScheduleDefinition SCH-COLUMN.",
+    "Updated ScheduleDefinition SCH-MATERIAL.",
+    "Updated SheetDefinition SHT-S-001.",
+    "Updated SheetDefinition SHT-S-002."
+  ]
+}

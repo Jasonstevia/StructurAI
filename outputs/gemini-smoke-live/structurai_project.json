@@ -1,0 +1,355 @@
+{
+  "project_id": "pump-room-3000x4000",
+  "title": "3000x4000mm Reinforced Concrete Pump Room",
+  "units": "mm",
+  "description": "Design of a reinforced concrete pump room consisting of 4 isolated footings, columns, and a roof slab.",
+  "levels": [
+    {
+      "id": "L1",
+      "elevation_mm": 0.0,
+      "name": "Foundations"
+    },
+    {
+      "id": "L2",
+      "elevation_mm": 3000.0,
+      "name": "Roof Slab"
+    }
+  ],
+  "grid_lines": [
+    {
+      "id": "G1",
+      "axis": "x",
+      "offset_mm": 0.0,
+      "label": "A"
+    },
+    {
+      "id": "G2",
+      "axis": "x",
+      "offset_mm": 3000.0,
+      "label": "B"
+    },
+    {
+      "id": "G3",
+      "axis": "y",
+      "offset_mm": 0.0,
+      "label": "1"
+    },
+    {
+      "id": "G4",
+      "axis": "y",
+      "offset_mm": 4000.0,
+      "label": "2"
+    }
+  ],
+  "footings": [
+    {
+      "id": "F1",
+      "center": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "width_mm": 800.0,
+      "length_mm": 800.0,
+      "depth_mm": 400.0,
+      "top_elevation_mm": 0.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "R1",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "both",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "center": {
+        "x": 3000.0,
+        "y": 0.0
+      },
+      "width_mm": 800.0,
+      "length_mm": 800.0,
+      "depth_mm": 400.0,
+      "top_elevation_mm": 0.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "R1",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "both",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "center": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "width_mm": 800.0,
+      "length_mm": 800.0,
+      "depth_mm": 400.0,
+      "top_elevation_mm": 0.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "R1",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "both",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "center": {
+        "x": 3000.0,
+        "y": 4000.0
+      },
+      "width_mm": 800.0,
+      "length_mm": 800.0,
+      "depth_mm": 400.0,
+      "top_elevation_mm": 0.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "R1",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "both",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "columns": [
+    {
+      "id": "C1",
+      "center": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": 0.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-V1",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 4,
+          "direction": "both",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "center": {
+        "x": 3000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": 0.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-V1",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 4,
+          "direction": "both",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "center": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": 0.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-V1",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 4,
+          "direction": "both",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "center": {
+        "x": 3000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 300.0,
+      "base_elevation_mm": 0.0,
+      "top_elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C-V1",
+          "diameter_mm": 16,
+          "spacing_mm": null,
+          "quantity": 4,
+          "direction": "both",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "beams": [],
+  "slabs": [
+    {
+      "id": "S1",
+      "boundary": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 3000.0,
+          "y": 0.0
+        },
+        {
+          "x": 3000.0,
+          "y": 4000.0
+        },
+        {
+          "x": 0.0,
+          "y": 4000.0
+        }
+      ],
+      "thickness_mm": 150.0,
+      "elevation_mm": 3000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "S-B1",
+          "diameter_mm": 10,
+          "spacing_mm": 200,
+          "quantity": null,
+          "direction": "both",
+          "cover_mm": 50,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "drawing_package": {
+    "views": [
+      {
+        "id": "V1",
+        "view_type": "foundation_plan",
+        "title": "Foundation Layout",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V2",
+        "view_type": "roof_framing_plan",
+        "title": "Roof Framing Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V3",
+        "view_type": "schedule",
+        "title": "Bar Bending Schedule",
+        "scale": "1:50",
+        "notes": []
+      }
+    ],
+    "dimensions": [
+      {
+        "id": "D-WIDTH",
+        "start": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 3000.0,
+          "y": 0.0
+        },
+        "offset_mm": -700.0,
+        "label": "3000"
+      },
+      {
+        "id": "D-LENGTH",
+        "start": {
+          "x": 3000.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 3000.0,
+          "y": 4000.0
+        },
+        "offset_mm": 700.0,
+        "label": "4000"
+      }
+    ],
+    "sections": [
+      {
+        "id": "SEC-A",
+        "label": "A-A",
+        "start": {
+          "x": -500.0,
+          "y": 2000.0
+        },
+        "end": {
+          "x": 3500.0,
+          "y": 2000.0
+        },
+        "target_view_id": null
+      }
+    ],
+    "general_notes": [
+      "Concrete Grade: C30/37",
+      "Steel reinforcement: Grade 500B",
+      "Nominal concrete cover: 50mm for footings, 30mm for slab/columns"
+    ]
+  },
+  "extracted_context": null,
+  "assumptions": [
+    "Soil bearing capacity is assumed to be >= 150 kN/m2.",
+    "No seismic loads considered in this preliminary design.",
+    "Roof slab is designed for light maintenance access load (1.5 kN/m2 live load).",
+    "Isolated footings are assumed to act independently."
+  ],
+  "change_log": [
+    "Added Dimension D-WIDTH.",
+    "Added Dimension D-LENGTH.",
+    "Added SectionMarker SEC-A."
+  ]
+}

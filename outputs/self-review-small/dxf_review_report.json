@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "score": 100,
+  "issues": [],
+  "entity_counts": {
+    "TEXT": 414,
+    "LINE": 412,
+    "CIRCLE": 28,
+    "LWPOLYLINE": 99,
+    "HATCH": 32
+  },
+  "layer_count": 18,
+  "extents": {
+    "min_x": -1230.0,
+    "min_y": -31666.31312793034,
+    "max_x": 22975.961152042866,
+    "max_y": 9360.0
+  },
+  "image_metrics": {
+    "width_px": 1200,
+    "height_px": 2035,
+    "non_background_ratio": 0.046592137592137595,
+    "colored_ratio": 0.042001638001638,
+    "occupied_grid_cells": 8
+  },
+  "preview_path": "outputs/self-review-small/structurai_preview.png"
+}
