@@ -1,0 +1,948 @@
+{
+  "project_id": "structurai-project",
+  "title": "Fire-Fighting Pipe Support Coordination Package",
+  "units": "mm",
+  "description": "AI-generated coordination package for fire-fighting pipe supports inside an industrial production shed.",
+  "levels": [
+    {
+      "id": "L-FLOOR",
+      "elevation_mm": 0.0,
+      "name": "Finished Floor"
+    },
+    {
+      "id": "L-PIPE-SUPPORT",
+      "elevation_mm": 2000.0,
+      "name": "Fire-Fighting Pipe Support Level"
+    }
+  ],
+  "grid_lines": [
+    {
+      "id": "GX-PL-1",
+      "axis": "x",
+      "offset_mm": 0.0,
+      "label": "11"
+    },
+    {
+      "id": "GX-PL-2",
+      "axis": "x",
+      "offset_mm": 7700.0,
+      "label": "10"
+    },
+    {
+      "id": "GX-PL-3",
+      "axis": "x",
+      "offset_mm": 15400.0,
+      "label": "9"
+    },
+    {
+      "id": "GX-PL-4",
+      "axis": "x",
+      "offset_mm": 23100.0,
+      "label": "8"
+    },
+    {
+      "id": "GX-PL-5",
+      "axis": "x",
+      "offset_mm": 30800.0,
+      "label": "7"
+    },
+    {
+      "id": "GX-PL-6",
+      "axis": "x",
+      "offset_mm": 38500.0,
+      "label": "6"
+    },
+    {
+      "id": "GX-PL-7",
+      "axis": "x",
+      "offset_mm": 46200.0,
+      "label": "5"
+    },
+    {
+      "id": "GX-PL-8",
+      "axis": "x",
+      "offset_mm": 53900.0,
+      "label": "4"
+    },
+    {
+      "id": "GX-PL-9",
+      "axis": "x",
+      "offset_mm": 61600.0,
+      "label": "3"
+    },
+    {
+      "id": "GX-PL-10",
+      "axis": "x",
+      "offset_mm": 69300.0,
+      "label": "2"
+    },
+    {
+      "id": "GX-PL-11",
+      "axis": "x",
+      "offset_mm": 77000.0,
+      "label": "1"
+    }
+  ],
+  "footings": [],
+  "strip_footings": [],
+  "columns": [],
+  "beams": [],
+  "slabs": [],
+  "walls": [],
+  "openings": [],
+  "steel_members": [
+    {
+      "id": "PS-C1",
+      "member_type": "column",
+      "start": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C2",
+      "member_type": "column",
+      "start": {
+        "x": 7700.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 7700.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C3",
+      "member_type": "column",
+      "start": {
+        "x": 15400.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 15400.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C4",
+      "member_type": "column",
+      "start": {
+        "x": 23100.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 23100.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C5",
+      "member_type": "column",
+      "start": {
+        "x": 30800.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 30800.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C6",
+      "member_type": "column",
+      "start": {
+        "x": 38500.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 38500.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C7",
+      "member_type": "column",
+      "start": {
+        "x": 46200.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 46200.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C8",
+      "member_type": "column",
+      "start": {
+        "x": 53900.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 53900.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C9",
+      "member_type": "column",
+      "start": {
+        "x": 61600.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 61600.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C10",
+      "member_type": "column",
+      "start": {
+        "x": 69300.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 69300.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-C11",
+      "member_type": "column",
+      "start": {
+        "x": 77000.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 77000.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Clamp/weld support to existing shed column after site verification."
+    },
+    {
+      "id": "PS-RAIL1",
+      "member_type": "beam",
+      "start": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 7700.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "PS-RAIL2",
+      "member_type": "beam",
+      "start": {
+        "x": 7700.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 15400.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "PS-RAIL3",
+      "member_type": "beam",
+      "start": {
+        "x": 15400.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 23100.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "PS-RAIL4",
+      "member_type": "beam",
+      "start": {
+        "x": 23100.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 30800.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "PS-RAIL5",
+      "member_type": "beam",
+      "start": {
+        "x": 30800.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 38500.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "PS-RAIL6",
+      "member_type": "beam",
+      "start": {
+        "x": 38500.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 46200.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "PS-RAIL7",
+      "member_type": "beam",
+      "start": {
+        "x": 46200.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 53900.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "PS-RAIL8",
+      "member_type": "beam",
+      "start": {
+        "x": 53900.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 61600.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "PS-RAIL9",
+      "member_type": "beam",
+      "start": {
+        "x": 61600.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 69300.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "PS-RAIL10",
+      "member_type": "beam",
+      "start": {
+        "x": 69300.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "end": {
+        "x": 77000.0,
+        "y": 0.0,
+        "z": 2000.0
+      },
+      "section": "UPN 160",
+      "material_grade": "S275",
+      "connection_note": "Continuous pipe support rail."
+    },
+    {
+      "id": "FF-PIPE-1",
+      "member_type": "pipe_support",
+      "start": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 2100.0
+      },
+      "end": {
+        "x": 77000.0,
+        "y": 0.0,
+        "z": 2100.0
+      },
+      "section": "NPS 6 CS SCH40",
+      "material_grade": "CS",
+      "connection_note": "Coordinate pipe clearances and hanger spacing with firefighting engineer."
+    },
+    {
+      "id": "FF-PIPE-2",
+      "member_type": "pipe_support",
+      "start": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 2250.0
+      },
+      "end": {
+        "x": 77000.0,
+        "y": 0.0,
+        "z": 2250.0
+      },
+      "section": "NPS 4 CS SCH40",
+      "material_grade": "CS",
+      "connection_note": "Coordinate pipe clearances and hanger spacing with firefighting engineer."
+    },
+    {
+      "id": "FF-PIPE-3",
+      "member_type": "pipe_support",
+      "start": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 2400.0
+      },
+      "end": {
+        "x": 77000.0,
+        "y": 0.0,
+        "z": 2400.0
+      },
+      "section": "NPS 2 1/2 CS SCH40",
+      "material_grade": "CS",
+      "connection_note": "Coordinate pipe clearances and hanger spacing with firefighting engineer."
+    },
+    {
+      "id": "FHC-REF-1",
+      "member_type": "misc",
+      "start": {
+        "x": 1200.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 1200.0,
+        "y": 0.0,
+        "z": 1600.0
+      },
+      "section": "Fire hose cabinet reference",
+      "material_grade": "S275",
+      "connection_note": "Reference only; verify final cabinet location."
+    },
+    {
+      "id": "FHC-REF-2",
+      "member_type": "misc",
+      "start": {
+        "x": 39700.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 39700.0,
+        "y": 0.0,
+        "z": 1600.0
+      },
+      "section": "Fire hose cabinet reference",
+      "material_grade": "S275",
+      "connection_note": "Reference only; verify final cabinet location."
+    },
+    {
+      "id": "FHC-REF-3",
+      "member_type": "misc",
+      "start": {
+        "x": 70500.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 70500.0,
+        "y": 0.0,
+        "z": 1600.0
+      },
+      "section": "Fire hose cabinet reference",
+      "material_grade": "S275",
+      "connection_note": "Reference only; verify final cabinet location."
+    }
+  ],
+  "drawing_package": {
+    "views": [
+      {
+        "id": "V-FOUNDATION",
+        "view_type": "foundation_plan",
+        "title": "Foundation Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-ROOF",
+        "view_type": "roof_framing_plan",
+        "title": "Roof Framing Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-SECTION-A",
+        "view_type": "section",
+        "title": "Section A-A",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-SECTION-B",
+        "view_type": "section",
+        "title": "Section B-B",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-FOOTING-DETAIL",
+        "view_type": "detail",
+        "title": "Isolated Footing Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-COLUMN-DETAIL",
+        "view_type": "detail",
+        "title": "Column Reinforcement Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-ROOF-DETAIL",
+        "view_type": "detail",
+        "title": "Roof Slab Reinforcement Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-WALL-DETAIL",
+        "view_type": "detail",
+        "title": "Core Wall and Opening Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-BBS",
+        "view_type": "schedule",
+        "title": "Bar Bending Schedule",
+        "scale": "1:50",
+        "notes": []
+      }
+    ],
+    "dimensions": [
+      {
+        "id": "D-PIPELINE-LENGTH",
+        "start": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 77000.0,
+          "y": 0.0
+        },
+        "offset_mm": -900.0,
+        "label": "77000"
+      }
+    ],
+    "sections": [
+      {
+        "id": "SEC-PIPE-A",
+        "label": "A-A",
+        "start": {
+          "x": 0.0,
+          "y": -500.0
+        },
+        "end": {
+          "x": 77000.0,
+          "y": -500.0
+        },
+        "target_view_id": null
+      },
+      {
+        "id": "SEC-PIPE-B",
+        "label": "B-B",
+        "start": {
+          "x": 38500.0,
+          "y": -500.0
+        },
+        "end": {
+          "x": 38500.0,
+          "y": 500.0
+        },
+        "target_view_id": null
+      }
+    ],
+    "details": [
+      {
+        "id": "DET-FOOTING-PLAN-SECTION",
+        "detail_type": "isolated_footing",
+        "title": "Typical Isolated Footing Plan and Section",
+        "source_entity_id": null,
+        "scale": "1:25",
+        "parameters": {
+          "show_rebar": true,
+          "show_cover": true,
+          "show_subgrade": true
+        }
+      },
+      {
+        "id": "DET-COLUMN-STARTER",
+        "detail_type": "column_reinforcement",
+        "title": "Typical Column Starter Bars and Ties",
+        "source_entity_id": null,
+        "scale": "1:25",
+        "parameters": {
+          "lap_length_mm": 650,
+          "starter_projection_mm": 600
+        }
+      },
+      {
+        "id": "DET-ROOF-SLAB",
+        "detail_type": "roof_slab_reinforcement",
+        "title": "Typical Roof Slab Reinforcement",
+        "source_entity_id": null,
+        "scale": "1:25",
+        "parameters": {
+          "top_cover_mm": 30,
+          "bottom_cover_mm": 30
+        }
+      }
+    ],
+    "schedules": [
+      {
+        "id": "SCH-BBS",
+        "schedule_type": "bar_bending",
+        "title": "Bar Bending Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-FOOTING",
+        "schedule_type": "footing",
+        "title": "Footing Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-COLUMN",
+        "schedule_type": "column",
+        "title": "Column Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-BEAM",
+        "schedule_type": "beam",
+        "title": "Beam Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-STEEL",
+        "schedule_type": "steel_member",
+        "title": "Structural Steel Member Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-MATERIAL",
+        "schedule_type": "material_takeoff",
+        "title": "Concrete and Rebar Takeoff",
+        "source_entity_ids": []
+      }
+    ],
+    "sheets": [
+      {
+        "id": "SHT-S-001",
+        "number": "S-001",
+        "title": "General Structural Arrangement",
+        "scale": "AS SHOWN",
+        "view_ids": [
+          "V-FOUNDATION",
+          "V-ROOF",
+          "V-SECTION-A",
+          "V-SECTION-B"
+        ]
+      },
+      {
+        "id": "SHT-S-002",
+        "number": "S-002",
+        "title": "Reinforcement Details and Schedules",
+        "scale": "AS SHOWN",
+        "view_ids": [
+          "V-FOOTING-DETAIL",
+          "V-COLUMN-DETAIL",
+          "V-ROOF-DETAIL",
+          "V-WALL-DETAIL",
+          "V-BBS"
+        ]
+      }
+    ],
+    "drafting_standard": {
+      "name": "StructurAI Professional RC",
+      "base_text_height_mm": 150.0,
+      "title_text_height_mm": 260.0,
+      "dimension_text_height_mm": 120.0,
+      "layer_prefix": "SAI",
+      "default_plan_scale": "1:50",
+      "default_detail_scale": "1:25"
+    },
+    "general_notes": [
+      "All dimensions are in millimeters unless noted otherwise.",
+      "Concrete grade C30 assumed for MVP drafting package; engineer to verify.",
+      "Reinforcement cover: 75mm for footings, 40mm for columns/beams/slabs unless noted.",
+      "This package is generated for engineer review and coordination, not final sealed design."
+    ]
+  },
+  "extracted_context": {
+    "source_path": "C:\\Users\\user\\Downloads\\Fire fighting lines inside the production line shed.pdf",
+    "file_type": "pdf",
+    "layers": {
+      "PDF_PAGE": 3
+    },
+    "lines": [
+      {
+        "page": 1,
+        "width_pt": 1684.0,
+        "height_pt": 2384.0,
+        "text": "SHAFT RAMP RAMP PREVALING WINDS TRUE NORTH 1 PLANT NORTH NPS 4\" CS,SCH40 NPS 2 1/2\" CS,SCH40 NPS 6\" CS,SCH40 NPS 6\" CS,SCH40 NPS 4\" CS,SCH40 NPS 2 1/2\" CS,SCH40 S-PL1 S-PL1 S-PL2 S-PL2 S-A S-A S-B S-B 30A100DPDD14040 1st Agri Hub - Industrial Start-Up - General RO. HABIB RO. JALBOUT Approved Company Issue for Approval R. SAAD EX-DE 01 28/02/2023 RO. HABIB RO. JALBOUT Issue for Approval R. SAAD EX-DE 02 06/06/2023 RO. HABIB RO. JALBOUT This document is property of Eni SA It shall neither be shown to Third Parties not used for purposes other than those for which it has been sent. Software: Autocad File Name: PB-FIRE-FIGHTING-LAYOUT--.dwg LEGEND REFERENCE DRAWINGS NOTES Superseeded N. Superseeded by N. Plant Unit NA Facility and Sub Facility Name Company Logo and Business Name Company Document ID: Contract N. Project Name Document Title Contractor Document ID: Revision Index Prepared Checked Job N. Contractor Logo and Business Name Approved Eni Congo S.A. Issue for Comments Sheet of Sheets Date Validity Status Description CONGO BIOFUEL Zerock Construction Congo S.a.r.l Scale Plant Area NA 1:150 R. SAAD 30A100DPDD14040 Revision number Contractor Contractor Contractor EX-DE 00 16/02/2023 6/8 Sheet Size: A1 SITE WATER SUPPLY AND FIRE FIGHTING SYSTEM LAYOUT N.CAPRETTI N.CAPRETTI N.CAPRETTI PRODUCTION BUILDING PLAN LAYOUT GENERAL EXTERNAL LAYOUT AND ROAD SECTIONS 30A100DADD11030 30A100DPGA05010 FIRE FIGHTING CALCULATION NOTE 30A100DPCA16020 FIXED FIRE-FIGHTING SYSTEMS P&I DIAGRAMS 30A100DPFM16030 DATASHEETS FOR FIREFIGHTING FIRE EXTINGUISHERS, CABINETS FOR HOSE REEL, FIRE HOSE REEL, REEL HOSE AND FIRE HYDRANTS ELECTRICAL ROOM - FIRE FIGHTING LAYOUT 30A100DPDD16100 SERVICES BUILDING - FIRE FIGHTING LAYOUT 30A100DPDD16070 SITE WATER SUPPLY CALCULATION NOTE 30A100DPEW14020 Issue for FINAL R. SAAD EX-DE 03 14/06/2023 RO. HABIB RO. JALBOUT N.CAPRETTI R. SAAD EX-DE 04 06/12/2023 RO. HABIB RO. JALBOUT N.CAPRETTI Issue for Approval R. SAAD EX-DE 05 21/03/2024 RO. HABIB RO. JALBOUT N.CAPRETTI Issue for Approval R. SAAD EX-DE 06 23/05/2024 RO. HABIB RO. JALBOUT M. PATURZO Issue for Approval R. SAAD EX-DE 07 23/07/2024 RO. HABIB RO. JALBOUT M. PATURZO Issue for Approval R. SAAD EX-DE 08 23/07/2024 RO. HABIB RO. JALBOUT M. PATURZO Issue for Approval R. SAAD EX-DE 09 22/08/2024 RO. HABIB RO. JALBOUT M. PATURZO Issue for Approval"
+      },
+      {
+        "page": 2,
+        "width_pt": 2384.0,
+        "height_pt": 1684.0,
+        "text": "S-A UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 NPS 2 1/2\" CS,SCH40 NPS 4\" CS,SCH40 NPS 6\" CS,SCH40 S-A Existing Columns For Production Shed S-B UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 UPN 160 NPS 2 1/2\" CS,SCH40 NPS 4\" CS,SCH40 NPS 6\" CS,SCH40 S-B Existing Columns For Production Shed REFERENCE DRAWINGS Superseeded N. Superseeded by N. Plant Unit NA Facility and Sub Facility Name Company Logo and Business Name Company Document ID: Contract N. Project Name Document Title Contractor Document ID: Job N. Contractor Logo and Business Name Sheet of Sheets Zerock Construction Congo S.a.r.l Scale Plant Area NA 1/125 30A100DPDD14040 7/8 Sheet Size: A1 30A100DPDD14040 Prepared Checked Approved Approved Issue for Comments Date Validity Status Description R. SAAD R. JALBOUT Revision number Contractor Contractor Contractor Company RO. HABIB EX-DE 00 16/02/2023 Eni Congo S.A. CONGO BIOFUEL 1st Agri Hub - Industrial Start-Up - General SITE WATER SUPPLY AND FIRE FIGHTING SYSTEM LAYOUT Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 01 28/02/2023 This document is property of Eni SA It shall neither be shown to Third Parties not used for purposes other than those for which it has been sent. Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 02 06/06/2023 N.CAPRETTI N.CAPRETTI N.CAPRETTI PRODUCTION LINES 1 & 2 ELEVATIONS LEGEND NOTES GENERAL EXTERNAL LAYOUT AND ROAD SECTIONS 30A100DADD11030 30A100DPGA05010 FIRE FIGHTING CALCULATION NOTE 30A100DPCA16020 FIXED FIRE-FIGHTING SYSTEMS P&I DIAGRAMS 30A100DPFM16030 DATASHEETS FOR FIREFIGHTING FIRE EXTINGUISHERS, CABINETS FOR HOSE REEL, FIRE HOSE REEL, REEL HOSE AND FIRE HYDRANTS ELECTRICAL ROOM - FIRE FIGHTING LAYOUT 30A100DPDD16100 SERVICES BUILDING - FIRE FIGHTING LAYOUT 30A100DPDD16070 SITE WATER SUPPLY CALCULATION NOTE 30A100DPEW14020 Issue for FINAL R. SAAD R. JALBOUT RO. HABIB EX-DE 03 14/06/2023 N.CAPRETTI Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 04 06/12/2023 N.CAPRETTI R. SAAD R. JALBOUT RO. HABIB EX-DE 05 21/03/2024 N.CAPRETTI Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 06 23/05/2024 M. PATURZO Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 07 23/07/2024 M. PATURZO Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 08 23/07/2024 M. PATURZO Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 09 22/08/2024 M. PATURZO Issue for Approval"
+      },
+      {
+        "page": 3,
+        "width_pt": 2384.0,
+        "height_pt": 1684.0,
+        "text": "NPS 6\" CS,SCH40 NPS 2 1/2\" CS,SCH40 NPS 1/2\" FIRE HOSE CABINET BALL VALVE PRESSURE GAGE AIR VENT WELDED L CHANNELS NPS 6\" CS,SCH40 NPS 4\" CS,SCH40 NPS 2 1/2\" CS,SCH40 FIRE HOSE CABINET WELDED L CHANNELS NPS 6\" CS,SCH40 NPS 1/2\" NPS 2 1/2\" CS,SCH40 FIRE HOSE CABINET PRESSURE GAGE AIR VENT BALL VALVE WELDED L CHANNELS NPS 4\" CS,SCH40 NPS 2 1/2\" CS,SCH40 NPS 6\" CS,SCH40 FIRE HOSE CABINET WELDED L CHANNELS NPS 4\" CS,SCH40 FIRE HOSE CABINET UPN 160 NPS 2 1/2\" CS,SCH40 NPS 4\" CS,SCH40 NPS 2 1/2\" CS,SCH40 FIRE HOSE CABINET UPN 160 REFERENCE DRAWINGS Superseeded N. Superseeded by N. Plant Unit NA Facility and Sub Facility Name Company Logo and Business Name Company Document ID: Contract N. Project Name Document Title Contractor Document ID: Job N. Contractor Logo and Business Name Sheet of Sheets Zerock Construction Congo S.a.r.l Scale Plant Area NA NTS 30A100DPDD14040 8/8 Sheet Size: A1 30A100DPDD14040 Prepared Checked Approved Approved Issue for Comments Date Validity Status Description R. SAAD R. JALBOUT Revision number Contractor Contractor Contractor Company RO. HABIB EX-DE 00 16/02/2023 Eni Congo S.A. CONGO BIOFUEL 1st Agri Hub - Industrial Start-Up - General SITE WATER SUPPLY AND FIRE FIGHTING SYSTEM LAYOUT Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 01 28/02/2023 This document is property of Eni SA It shall neither be shown to Third Parties not used for purposes other than those for which it has been sent. Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 02 06/06/2023 N.CAPRETTI N.CAPRETTI N.CAPRETTI DETAILS GENERAL EXTERNAL LAYOUT AND ROAD SECTIONS 30A100DADD11030 30A100DPGA05010 FIRE FIGHTING CALCULATION NOTE 30A100DPCA16020 FIXED FIRE-FIGHTING SYSTEMS P&I DIAGRAMS 30A100DPFM16030 DATASHEETS FOR FIREFIGHTING FIRE EXTINGUISHERS, CABINETS FOR HOSE REEL, FIRE HOSE REEL, REEL HOSE AND FIRE HYDRANTS ELECTRICAL ROOM - FIRE FIGHTING LAYOUT 30A100DPDD16100 SERVICES BUILDING - FIRE FIGHTING LAYOUT 30A100DPDD16070 SITE WATER SUPPLY CALCULATION NOTE 30A100DPEW14020 Issue for FINAL R. SAAD R. JALBOUT RO. HABIB EX-DE 03 14/06/2023 N.CAPRETTI Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 04 06/12/2023 N.CAPRETTI R. SAAD R. JALBOUT RO. HABIB EX-DE 05 21/03/2024 N.CAPRETTI Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 06 23/05/2024 M. PATURZO Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 07 23/07/2024 M. PATURZO Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 08 23/07/2024 M. PATURZO Issue for Approval R. SAAD R. JALBOUT RO. HABIB EX-DE 09 22/08/2024 M. PATURZO Issue for Approval"
+      }
+    ],
+    "notes": [
+      "Extracted PDF drawing context from 3 page(s).",
+      "Page 1: detected fire-fighting pipe/support layout context.",
+      "Page 1: detected revision/comment workflow metadata.",
+      "Page 2: detected fire-fighting pipe/support layout context.",
+      "Page 2: detected revision/comment workflow metadata.",
+      "Page 3: detected fire-fighting pipe/support layout context.",
+      "Page 3: detected revision/comment workflow metadata."
+    ]
+  },
+  "assumptions": [
+    "Existing production shed columns and UPN 160 supports inferred from PDF drawing context.",
+    "Pipe routes are represented as support-centerline members for coordination and engineer review."
+  ],
+  "change_log": [
+    "Added Level L-FLOOR.",
+    "Added Level L-PIPE-SUPPORT.",
+    "Added GridLine GX-PL-1.",
+    "Added SteelMember PS-C1.",
+    "Added GridLine GX-PL-2.",
+    "Added SteelMember PS-C2.",
+    "Added GridLine GX-PL-3.",
+    "Added SteelMember PS-C3.",
+    "Added GridLine GX-PL-4.",
+    "Added SteelMember PS-C4.",
+    "Added GridLine GX-PL-5.",
+    "Added SteelMember PS-C5.",
+    "Added GridLine GX-PL-6.",
+    "Added SteelMember PS-C6.",
+    "Added GridLine GX-PL-7.",
+    "Added SteelMember PS-C7.",
+    "Added GridLine GX-PL-8.",
+    "Added SteelMember PS-C8.",
+    "Added GridLine GX-PL-9.",
+    "Added SteelMember PS-C9.",
+    "Added GridLine GX-PL-10.",
+    "Added SteelMember PS-C10.",
+    "Added GridLine GX-PL-11.",
+    "Added SteelMember PS-C11.",
+    "Added SteelMember PS-RAIL1.",
+    "Added SteelMember PS-RAIL2.",
+    "Added SteelMember PS-RAIL3.",
+    "Added SteelMember PS-RAIL4.",
+    "Added SteelMember PS-RAIL5.",
+    "Added SteelMember PS-RAIL6.",
+    "Added SteelMember PS-RAIL7.",
+    "Added SteelMember PS-RAIL8.",
+    "Added SteelMember PS-RAIL9.",
+    "Added SteelMember PS-RAIL10.",
+    "Added SteelMember FF-PIPE-1.",
+    "Added SteelMember FF-PIPE-2.",
+    "Added SteelMember FF-PIPE-3.",
+    "Added SteelMember FHC-REF-1.",
+    "Added SteelMember FHC-REF-2.",
+    "Added SteelMember FHC-REF-3.",
+    "Added Dimension D-PIPELINE-LENGTH.",
+    "Added SectionMarker SEC-PIPE-A.",
+    "Added SectionMarker SEC-PIPE-B.",
+    "Added DrawingView V-FOUNDATION.",
+    "Added DrawingView V-ROOF.",
+    "Added DrawingView V-SECTION-A.",
+    "Added DrawingView V-SECTION-B.",
+    "Added DrawingView V-FOOTING-DETAIL.",
+    "Added DrawingView V-COLUMN-DETAIL.",
+    "Added DrawingView V-ROOF-DETAIL.",
+    "Added DrawingView V-WALL-DETAIL.",
+    "Added DrawingView V-BBS.",
+    "Added DetailCallout DET-FOOTING-PLAN-SECTION.",
+    "Added DetailCallout DET-COLUMN-STARTER.",
+    "Added DetailCallout DET-ROOF-SLAB.",
+    "Added ScheduleDefinition SCH-BBS.",
+    "Added ScheduleDefinition SCH-FOOTING.",
+    "Added ScheduleDefinition SCH-COLUMN.",
+    "Added ScheduleDefinition SCH-BEAM.",
+    "Added ScheduleDefinition SCH-STEEL.",
+    "Added ScheduleDefinition SCH-MATERIAL.",
+    "Added SheetDefinition SHT-S-001.",
+    "Added SheetDefinition SHT-S-002.",
+    "Updated Level L-FLOOR.",
+    "Updated Level L-PIPE-SUPPORT.",
+    "Updated GridLine GX-PL-1.",
+    "Updated SteelMember PS-C1.",
+    "Updated GridLine GX-PL-2.",
+    "Updated SteelMember PS-C2.",
+    "Updated GridLine GX-PL-3.",
+    "Updated SteelMember PS-C3.",
+    "Updated GridLine GX-PL-4.",
+    "Updated SteelMember PS-C4.",
+    "Updated GridLine GX-PL-5.",
+    "Updated SteelMember PS-C5.",
+    "Updated GridLine GX-PL-6.",
+    "Updated SteelMember PS-C6.",
+    "Updated GridLine GX-PL-7.",
+    "Updated SteelMember PS-C7.",
+    "Updated GridLine GX-PL-8.",
+    "Updated SteelMember PS-C8.",
+    "Updated GridLine GX-PL-9.",
+    "Updated SteelMember PS-C9.",
+    "Updated GridLine GX-PL-10.",
+    "Updated SteelMember PS-C10.",
+    "Updated GridLine GX-PL-11.",
+    "Updated SteelMember PS-C11.",
+    "Updated SteelMember PS-RAIL1.",
+    "Updated SteelMember PS-RAIL2.",
+    "Updated SteelMember PS-RAIL3.",
+    "Updated SteelMember PS-RAIL4.",
+    "Updated SteelMember PS-RAIL5.",
+    "Updated SteelMember PS-RAIL6.",
+    "Updated SteelMember PS-RAIL7.",
+    "Updated SteelMember PS-RAIL8.",
+    "Updated SteelMember PS-RAIL9.",
+    "Updated SteelMember PS-RAIL10.",
+    "Updated SteelMember FF-PIPE-1.",
+    "Updated SteelMember FF-PIPE-2.",
+    "Updated SteelMember FF-PIPE-3.",
+    "Updated SteelMember FHC-REF-1.",
+    "Updated SteelMember FHC-REF-2.",
+    "Updated SteelMember FHC-REF-3.",
+    "Updated Dimension D-PIPELINE-LENGTH.",
+    "Updated SectionMarker SEC-PIPE-A.",
+    "Updated SectionMarker SEC-PIPE-B.",
+    "Updated DrawingView V-FOUNDATION.",
+    "Updated DrawingView V-ROOF.",
+    "Updated DrawingView V-SECTION-A.",
+    "Updated DrawingView V-SECTION-B.",
+    "Updated DrawingView V-FOOTING-DETAIL.",
+    "Updated DrawingView V-COLUMN-DETAIL.",
+    "Updated DrawingView V-ROOF-DETAIL.",
+    "Updated DrawingView V-WALL-DETAIL.",
+    "Updated DrawingView V-BBS.",
+    "Updated DetailCallout DET-FOOTING-PLAN-SECTION.",
+    "Updated DetailCallout DET-COLUMN-STARTER.",
+    "Updated DetailCallout DET-ROOF-SLAB.",
+    "Updated ScheduleDefinition SCH-BBS.",
+    "Updated ScheduleDefinition SCH-FOOTING.",
+    "Updated ScheduleDefinition SCH-COLUMN.",
+    "Updated ScheduleDefinition SCH-BEAM.",
+    "Updated ScheduleDefinition SCH-STEEL.",
+    "Updated ScheduleDefinition SCH-MATERIAL.",
+    "Updated SheetDefinition SHT-S-001.",
+    "Updated SheetDefinition SHT-S-002."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "score": 95,
+  "issues": [
+    {
+      "code": "PREVIEW_RENDER_FALLBACK",
+      "severity": "warning",
+      "message": "Used lightweight preview renderer because full CAD preview failed: No module named 'matplotlib'"
+    }
+  ],
+  "entity_counts": {
+    "TEXT": 319,
+    "LINE": 146,
+    "CIRCLE": 28,
+    "HATCH": 4,
+    "LWPOLYLINE": 31
+  },
+  "layer_count": 14,
+  "extents": {
+    "min_x": -700.0,
+    "min_y": -40890.0,
+    "max_x": 51140.59686221009,
+    "max_y": 8260.0
+  },
+  "image_metrics": {},
+  "preview_path": "outputs\\assessment-cpy-comment-bracing\\structurai_preview.png"
+}

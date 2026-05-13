@@ -5,7 +5,7 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
-from backend.core.structura_model import Beam, Column, Footing, Point2D, RebarSpec, Slab, StructuraProject
+from backend.core.structura_model import Beam, Column, Footing, Opening, Point2D, RebarSpec, Slab, SteelMember, StripFooting, StructuraProject, Wall
 
 
 @dataclass(frozen=True)
@@ -58,8 +58,10 @@ def export_dxf(project: StructuraProject, path: Path) -> Path:
 
     msp = doc.modelspace()
     bounds = _project_bounds(project)
+    framing_levels = _framing_elevations(project)
     plan_gap = max(9000.0, bounds.width + 5500.0)
-    row_gap = max(9500.0, bounds.height + 7000.0)
+    framing_stack_height = max(1, len(framing_levels)) * (bounds.height + 3000.0)
+    row_gap = max(9500.0, bounds.height + 7000.0, framing_stack_height + 4500.0)
 
     foundation_origin = Point2D(x=0, y=0)
     roof_origin = Point2D(x=plan_gap, y=0)
@@ -75,6 +77,8 @@ def export_dxf(project: StructuraProject, path: Path) -> Path:
     _draw_section(msp, project, bounds, section_b_origin, "B-B", along="y")
     _draw_detail_sheet(msp, project, details_origin)
     _draw_schedule_sheet(msp, project, schedules_origin)
+    if project.steel_members:
+        _draw_steel_repair_sheet(msp, project, Point2D(x=0, y=-3 * row_gap))
     _draw_title_block(msp, project, Point2D(x=plan_gap + bounds.width + 2200, y=-2 * row_gap), height=12000)
 
     doc.saveas(path)
@@ -95,6 +99,10 @@ def _setup_layers(doc) -> None:
         "SAI-S-COLUMN": (5, 35),
         "SAI-S-BEAM": (30, 35),
         "SAI-S-SLAB": (4, 25),
+        "SAI-S-WALL": (5, 45),
+        "SAI-S-STEEL": (5, 35),
+        "SAI-S-BRACE": (1, 35),
+        "SAI-S-OPENING": (1, 25),
         "SAI-S-REBAR": (1, 25),
         "SAI-S-TIES": (3, 20),
         "SAI-H-CONCRETE": (8, 13),
@@ -124,9 +132,18 @@ def _project_bounds(project: StructuraProject) -> Bounds:
     for footing in project.footings:
         xs.extend([footing.center.x - footing.width_mm / 2, footing.center.x + footing.width_mm / 2])
         ys.extend([footing.center.y - footing.length_mm / 2, footing.center.y + footing.length_mm / 2])
+    for strip in project.strip_footings:
+        xs.extend([strip.start.x, strip.end.x])
+        ys.extend([strip.start.y, strip.end.y])
     for column in project.columns:
         xs.extend([column.center.x - column.width_mm / 2, column.center.x + column.width_mm / 2])
         ys.extend([column.center.y - column.depth_mm / 2, column.center.y + column.depth_mm / 2])
+    for wall in project.walls:
+        xs.extend([wall.start.x, wall.end.x])
+        ys.extend([wall.start.y, wall.end.y])
+    for member in project.steel_members:
+        xs.extend([member.start.x, member.end.x])
+        ys.extend([member.start.z, member.end.z])
     for slab in project.slabs:
         xs.extend(point.x for point in slab.boundary)
         ys.extend(point.y for point in slab.boundary)
@@ -257,6 +274,103 @@ def _draw_beam_plan(msp, beam: Beam, bounds: Bounds, origin: Point2D, label_offs
     _add_text(msp, beam.id, (start.x + end.x) / 2 + nx * label_offset, (start.y + end.y) / 2 + ny * label_offset, 120, "SAI-A-TEXT", rotation=math.degrees(math.atan2(dy, dx)))
 
 
+def _segment_rect_points(start: Point2D, end: Point2D, width: float) -> list[tuple[float, float]]:
+    dx = end.x - start.x
+    dy = end.y - start.y
+    length = math.hypot(dx, dy) or 1.0
+    nx = -dy / length
+    ny = dx / length
+    half = width / 2
+    return [
+        (start.x + nx * half, start.y + ny * half),
+        (end.x + nx * half, end.y + ny * half),
+        (end.x - nx * half, end.y - ny * half),
+        (start.x - nx * half, start.y - ny * half),
+    ]
+
+
+def _draw_strip_footing_plan(msp, strip: StripFooting, bounds: Bounds, origin: Point2D) -> None:
+    start = bounds.shift(strip.start, origin)
+    end = bounds.shift(strip.end, origin)
+    points = _segment_rect_points(start, end, strip.width_mm)
+    _add_hatch(msp, points, "SAI-H-CONCRETE", "ANSI31", scale=120, color=8)
+    _add_polyline(msp, points, "SAI-S-FOOTING")
+    mid_x = (start.x + end.x) / 2
+    mid_y = (start.y + end.y) / 2
+    _add_text(msp, f"{strip.id} {strip.width_mm:.0f}x{strip.depth_mm:.0f}", mid_x + 120, mid_y + 120, 105, "SAI-A-TEXT")
+
+
+def _draw_wall_plan(msp, wall: Wall, bounds: Bounds, origin: Point2D) -> None:
+    start = bounds.shift(wall.start, origin)
+    end = bounds.shift(wall.end, origin)
+    points = _segment_rect_points(start, end, wall.thickness_mm)
+    _add_solid_hatch(msp, points, "SAI-S-WALL", 5)
+    _add_polyline(msp, points, "SAI-S-WALL")
+    mid_x = (start.x + end.x) / 2
+    mid_y = (start.y + end.y) / 2
+    _add_text(msp, wall.id, mid_x + 100, mid_y + 100, 105, "SAI-A-TEXT", rotation=math.degrees(math.atan2(end.y - start.y, end.x - start.x)))
+
+
+def _draw_opening_plan(msp, opening: Opening, walls: list[Wall], bounds: Bounds, origin: Point2D) -> None:
+    host = next((wall for wall in walls if wall.id == opening.host_id), None)
+    if not host:
+        return
+    center = bounds.shift(opening.center, origin)
+    angle = math.atan2(host.end.y - host.start.y, host.end.x - host.start.x)
+    ux = math.cos(angle)
+    uy = math.sin(angle)
+    half = opening.width_mm / 2
+    p0 = (center.x - ux * half, center.y - uy * half)
+    p1 = (center.x + ux * half, center.y + uy * half)
+    msp.add_line(p0, p1, dxfattribs={"layer": "SAI-S-OPENING"})
+    _add_text(msp, opening.id, center.x + 120, center.y - 220, 90, "SAI-S-OPENING", rotation=math.degrees(angle))
+
+
+def _draw_steel_member_elevation(msp, member: SteelMember, origin: Point2D) -> None:
+    layer = "SAI-S-BRACE" if member.member_type == "brace" else "SAI-S-STEEL"
+    start = (origin.x + member.start.x, origin.y + member.start.z)
+    end = (origin.x + member.end.x, origin.y + member.end.z)
+    lineweight_width = 60 if member.member_type in {"column", "beam"} else 35
+    msp.add_lwpolyline([start, end], dxfattribs={"layer": layer, "const_width": lineweight_width})
+    if member.member_type in {"brace", "platform"}:
+        mid_x = (start[0] + end[0]) / 2
+        mid_y = (start[1] + end[1]) / 2
+        _add_text(msp, member.section, mid_x + 80, mid_y + 80, 90, "SAI-A-TEXT", rotation=math.degrees(math.atan2(end[1] - start[1], end[0] - start[0])))
+
+
+def _draw_steel_repair_sheet(msp, project: StructuraProject, origin: Point2D) -> None:
+    pipe_support = any(member.member_type == "pipe_support" for member in project.steel_members)
+    title = "Fire-Fighting Pipe Support Coordination" if pipe_support else "Steel Bracing Comment Resolution"
+    _draw_view_title(msp, title, "1:50", Point2D(x=origin.x, y=origin.y + 6200), width=8400)
+    note = (
+        "PIPE SUPPORT COORDINATION:\nNPS FIRE-FIGHTING LINES MODELLED AS SUPPORT CENTERLINES.\nUPN 160 SUPPORTS ADDED AT PRODUCTION SHED COLUMNS FOR ENGINEER REVIEW."
+        if pipe_support
+        else "RESPONSE TO RED-PEN COMMENT:\nELEMENT WITHOUT SUPPORT - ADD ADEQUATE BRACING.\nADDED DIAGONAL L50x6 BRACES AND GUSSET PLATE NOTES AT UNSUPPORTED SPANS."
+    )
+    _add_multiline(msp, note, origin.x, origin.y + 5700, 130, "SAI-A-TEXT")
+    ground_y = origin.y + 800
+    msp.add_line((origin.x - 500, ground_y), (origin.x + 19500, ground_y), dxfattribs={"layer": "SAI-A-TEXT"})
+    sheet_title = "ELEVATION - PIPE SUPPORT COORDINATION" if pipe_support else "FRONT ELEVATION - PROPOSED BRACING OVERLAY"
+    _add_text(msp, sheet_title, origin.x, origin.y + 5100, 160, "SAI-A-TITLE")
+    for member in project.steel_members:
+        _draw_steel_member_elevation(msp, member, Point2D(x=origin.x, y=ground_y))
+    _draw_dimension(msp, Point2D(x=origin.x, y=ground_y), Point2D(x=origin.x + 18500, y=ground_y), -650, "18500")
+    _draw_dimension(msp, Point2D(x=origin.x - 450, y=ground_y), Point2D(x=origin.x - 450, y=ground_y + 4300), 0, "4300")
+    _add_multiline(
+        msp,
+        (
+            "CONNECTION NOTES:\n1. VERIFY CLAMP/WELD LOCATIONS AGAINST EXISTING SHED COLUMNS.\n2. COORDINATE PIPE ELEVATIONS WITH FIRE-FIGHTING ENGINEER.\n3. CHECK UPN 160 SUPPORT CAPACITY BEFORE FABRICATION."
+            if pipe_support
+            else "CONNECTION NOTES:\n1. ADD 8mm GUSSET PLATES AT BRACE ENDS.\n2. SITE VERIFY EXISTING MEMBER SIZES BEFORE FABRICATION.\n3. WELDS/BOLTS TO BE CHECKED BY STRUCTURAL ENGINEER."
+        ),
+        origin.x + 12100,
+        origin.y + 4200,
+        115,
+        "SAI-A-TEXT",
+    )
+    _draw_steel_member_schedule(msp, project, Point2D(x=origin.x, y=origin.y - 800))
+
+
 def _draw_rebar_grid(msp, center: Point2D, width: float, height: float, bars: list[RebarSpec], layer: str = "SAI-S-REBAR") -> None:
     cover = min((bar.cover_mm for bar in bars), default=75)
     x0 = center.x - width / 2 + cover
@@ -294,6 +408,8 @@ def _first_rebar_label(bars: list[RebarSpec], fallback: str) -> str:
 def _draw_foundation_plan(msp, project: StructuraProject, bounds: Bounds, origin: Point2D) -> None:
     _draw_view_title(msp, "Foundation Plan", "1:50", Point2D(x=origin.x, y=origin.y + bounds.height + 1850))
     _draw_grid(msp, project, bounds, origin)
+    for strip in project.strip_footings:
+        _draw_strip_footing_plan(msp, strip, bounds, origin)
     for beam in project.beams:
         _draw_beam_plan(msp, beam, bounds, origin)
     for footing in project.footings:
@@ -316,6 +432,10 @@ def _draw_foundation_plan(msp, project: StructuraProject, bounds: Bounds, origin
         _draw_rect(msp, center, column.width_mm, column.depth_mm, "SAI-S-COLUMN")
         _add_solid_hatch(msp, _rect_points(center, column.width_mm, column.depth_mm), "SAI-S-COLUMN", 5)
         _add_text(msp, column.id, center.x + 130, center.y + 130, 115, "SAI-A-TEXT")
+    for wall in project.walls:
+        _draw_wall_plan(msp, wall, bounds, origin)
+    for opening in project.openings:
+        _draw_opening_plan(msp, opening, project.walls, bounds, origin)
     for dimension in project.drawing_package.dimensions:
         start = bounds.shift(dimension.start, origin)
         end = bounds.shift(dimension.end, origin)
@@ -325,9 +445,19 @@ def _draw_foundation_plan(msp, project: StructuraProject, bounds: Bounds, origin
 
 
 def _draw_roof_plan(msp, project: StructuraProject, bounds: Bounds, origin: Point2D) -> None:
-    _draw_view_title(msp, "Roof Framing and Reinforcement Plan", "1:50", Point2D(x=origin.x, y=origin.y + bounds.height + 1850), width=6500)
+    elevations = _framing_elevations(project)
+    vertical_gap = bounds.height + 3000.0
+    for index, elevation in enumerate(elevations):
+        level_origin = Point2D(x=origin.x, y=origin.y - index * vertical_gap)
+        is_roof = index == len(elevations) - 1
+        title = "Roof Framing and Reinforcement Plan" if is_roof else f"Level {index + 1} Framing and Reinforcement Plan"
+        _draw_framing_plan(msp, project, bounds, level_origin, elevation, title)
+
+
+def _draw_framing_plan(msp, project: StructuraProject, bounds: Bounds, origin: Point2D, elevation: float, title: str) -> None:
+    _draw_view_title(msp, title, "1:50", Point2D(x=origin.x, y=origin.y + bounds.height + 1850), width=7200)
     _draw_grid(msp, project, bounds, origin)
-    for slab in project.slabs:
+    for slab in _slabs_at_elevation(project, elevation):
         shifted = [bounds.shift(point, origin) for point in slab.boundary]
         points = [(point.x, point.y) for point in shifted]
         _add_polyline(msp, points, "SAI-S-SLAB")
@@ -335,9 +465,16 @@ def _draw_roof_plan(msp, project: StructuraProject, bounds: Bounds, origin: Poin
         _draw_roof_rebar(msp, points, slab)
         center_x = sum(point.x for point in shifted) / len(shifted)
         center_y = sum(point.y for point in shifted) / len(shifted)
-        _add_multiline(msp, f"{slab.id} ROOF SLAB\nTHK={slab.thickness_mm:.0f}mm\n{_first_rebar_label(slab.rebar, 'SLAB REBAR BY ENGINEER')}", center_x - 600, center_y + 250, 120, "SAI-A-TEXT")
-    for beam in project.beams:
+        slab_label = "ROOF SLAB" if "Roof" in title else "FLOOR SLAB"
+        _add_multiline(msp, f"{slab.id} {slab_label}\nTHK={slab.thickness_mm:.0f}mm\n{_first_rebar_label(slab.rebar, 'SLAB REBAR BY ENGINEER')}", center_x - 600, center_y + 250, 120, "SAI-A-TEXT")
+    for beam in _beams_at_elevation(project, elevation):
         _draw_beam_plan(msp, beam, bounds, origin)
+    for wall in project.walls:
+        if wall.base_elevation_mm <= elevation <= wall.top_elevation_mm + 1:
+            _draw_wall_plan(msp, wall, bounds, origin)
+    for opening in project.openings:
+        if opening.sill_elevation_mm <= elevation <= opening.sill_elevation_mm + 3500:
+            _draw_opening_plan(msp, opening, project.walls, bounds, origin)
     _draw_roof_arrows(msp, bounds, origin)
     for dimension in project.drawing_package.dimensions:
         start = bounds.shift(dimension.start, origin)
@@ -376,10 +513,12 @@ def _draw_roof_arrows(msp, bounds: Bounds, origin: Point2D) -> None:
 
 
 def _draw_section(msp, project: StructuraProject, bounds: Bounds, origin: Point2D, title: str, along: str) -> None:
-    _draw_view_title(msp, f"Section {title}", "1:50", Point2D(x=origin.x, y=origin.y + 4350))
+    levels = _framing_elevations(project)
     ground_y = origin.y + 900
     foundation_top = _level(project, "L-FOUNDATION", -500)
-    roof_y = ground_y + (_level(project, "L-ROOF", 3000) - foundation_top)
+    top_elevation = max(levels or [_level(project, "L-ROOF", 3000)])
+    roof_y = ground_y + (top_elevation - foundation_top)
+    _draw_view_title(msp, f"Section {title}", "1:50", Point2D(x=origin.x, y=roof_y + 900))
     section_width = bounds.width if along == "x" else bounds.height
     section_width = max(section_width, 4200)
     soil = [(origin.x - 700, origin.y), (origin.x + section_width + 900, origin.y), (origin.x + section_width + 900, ground_y), (origin.x - 700, ground_y)]
@@ -409,11 +548,15 @@ def _draw_section(msp, project: StructuraProject, bounds: Bounds, origin: Point2
             _draw_dimension(msp, Point2D(x=x - footing.width_mm / 2, y=ground_y - footing.depth_mm - 180), Point2D(x=x + footing.width_mm / 2, y=ground_y - footing.depth_mm - 180), 0, f"{footing.width_mm:.0f}")
         _draw_grid_bubble(msp, x, roof_y + 700, _nearest_grid_label(project, column.center, along))
 
-    _draw_rect(msp, Point2D(x=origin.x + section_width / 2, y=roof_y), section_width, 170, "SAI-S-SLAB", "SAI-H-CONCRETE", "ANSI31")
-    _add_text(msp, "ROOF SLAB / BEAM", origin.x + section_width / 2 - 450, roof_y + 220, 120, "SAI-A-TEXT")
+    for index, elevation in enumerate(levels, start=1):
+        y = ground_y + (elevation - foundation_top)
+        is_roof = index == len(levels)
+        _draw_rect(msp, Point2D(x=origin.x + section_width / 2, y=y), section_width, 170, "SAI-S-SLAB", "SAI-H-CONCRETE", "ANSI31")
+        label = "ROOF SLAB / BEAM" if is_roof else f"LEVEL {index} SLAB / BEAM"
+        _add_text(msp, label, origin.x + section_width / 2 - 450, y + 220, 120, "SAI-A-TEXT")
+        _draw_level_marker(msp, origin.x + section_width / 2 + 600, y, _level_label(elevation, "ROOF" if is_roof else f"L{index}"))
     _add_multiline(msp, "POLYETHYLENE SHEET\nCOMPACTED SUBGRADE TO 95%\nCONCRETE INTERLOCK PAVING", origin.x + section_width / 2 - 200, ground_y - 300, 120, "SAI-A-TEXT")
     _draw_level_marker(msp, origin.x + section_width / 2 + 600, ground_y, "+0.000 GL")
-    _draw_level_marker(msp, origin.x + section_width / 2 + 600, roof_y, "+3.000 ROOF")
     _draw_dimension(msp, Point2D(x=origin.x - 450, y=ground_y), Point2D(x=origin.x - 450, y=roof_y), 0, f"{roof_y - ground_y:.0f}")
 
 
@@ -422,6 +565,27 @@ def _level(project: StructuraProject, level_id: str, fallback: float) -> float:
         if level.id == level_id:
             return level.elevation_mm
     return fallback
+
+
+def _framing_elevations(project: StructuraProject) -> list[float]:
+    elevations = {round(slab.elevation_mm, 3) for slab in project.slabs if slab.elevation_mm > 0}
+    elevations.update(round(beam.elevation_mm, 3) for beam in project.beams if beam.elevation_mm > 0)
+    if not elevations:
+        elevations.add(round(_level(project, "L-ROOF", 3000), 3))
+    return sorted(elevations)
+
+
+def _slabs_at_elevation(project: StructuraProject, elevation: float) -> list[Slab]:
+    return [slab for slab in project.slabs if abs(slab.elevation_mm - elevation) <= 1.0]
+
+
+def _beams_at_elevation(project: StructuraProject, elevation: float) -> list[Beam]:
+    return [beam for beam in project.beams if abs(beam.elevation_mm - elevation) <= 1.0]
+
+
+def _level_label(elevation: float, suffix: str) -> str:
+    sign = "+" if elevation >= 0 else "-"
+    return f"{sign}{abs(elevation) / 1000:.3f} {suffix}"
 
 
 def _section_position(point: Point2D, bounds: Bounds, width: float, along: str) -> float:
@@ -469,12 +633,15 @@ def _draw_detail_sheet(msp, project: StructuraProject, origin: Point2D) -> None:
     footing = project.footings[0] if project.footings else None
     column = project.columns[0] if project.columns else None
     slab = project.slabs[0] if project.slabs else None
+    wall = project.walls[0] if project.walls else None
     if footing:
         _draw_footing_detail(msp, footing, Point2D(x=origin.x, y=origin.y + 2800))
     if column:
         _draw_column_detail(msp, column, Point2D(x=origin.x + 5200, y=origin.y + 2800))
     if slab:
         _draw_slab_detail(msp, slab, Point2D(x=origin.x, y=origin.y - 1700))
+    if wall:
+        _draw_wall_detail(msp, wall, Point2D(x=origin.x + 6500, y=origin.y - 1700))
 
 
 def _draw_footing_detail(msp, footing: Footing, origin: Point2D) -> None:
@@ -518,6 +685,31 @@ def _draw_slab_detail(msp, slab: Slab, origin: Point2D) -> None:
     _draw_dimension(msp, Point2D(x=origin.x + 5800, y=origin.y), Point2D(x=origin.x + 5800, y=origin.y + slab.thickness_mm), 0, f"{slab.thickness_mm:.0f}")
 
 
+def _draw_wall_detail(msp, wall: Wall, origin: Point2D) -> None:
+    _add_text(msp, "RC CORE WALL REINFORCEMENT", origin.x, origin.y + 1100, 180, "SAI-A-TITLE")
+    height = 1800
+    length = 2600
+    panel = [(origin.x, origin.y), (origin.x + length, origin.y), (origin.x + length, origin.y + height), (origin.x, origin.y + height)]
+    _add_hatch(msp, panel, "SAI-H-CONCRETE", "ANSI31", scale=120, color=8)
+    _add_polyline(msp, panel, "SAI-S-WALL")
+    x = origin.x + 180
+    while x < origin.x + length:
+        msp.add_line((x, origin.y + 120), (x, origin.y + height - 120), dxfattribs={"layer": "SAI-S-REBAR"})
+        x += 200
+    y = origin.y + 220
+    while y < origin.y + height:
+        msp.add_line((origin.x + 120, y), (origin.x + length - 120, y), dxfattribs={"layer": "SAI-S-TIES"})
+        y += 200
+    _add_multiline(
+        msp,
+        f"{wall.id} {wall.thickness_mm:.0f}mm THK\nVERT: T16 @200 EF\nHORZ: T12 @200 EF\nOPENINGS: 2T16 TRIMMERS",
+        origin.x,
+        origin.y - 320,
+        115,
+        "SAI-A-TEXT",
+    )
+
+
 def _draw_schedule_sheet(msp, project: StructuraProject, origin: Point2D) -> None:
     _draw_view_title(msp, "Schedules and Takeoff", "NTS", Point2D(x=origin.x, y=origin.y + 5000), width=5200)
     rows = _bar_schedule_rows(project)
@@ -526,8 +718,18 @@ def _draw_schedule_sheet(msp, project: StructuraProject, origin: Point2D) -> Non
     _draw_footing_schedule(msp, project, Point2D(x=origin.x, y=lower_y))
     _draw_column_schedule(msp, project, Point2D(x=origin.x + 3900, y=lower_y))
     _draw_beam_schedule(msp, project, Point2D(x=origin.x + 7800, y=lower_y))
-    _draw_material_takeoff(msp, project, rows, Point2D(x=origin.x, y=lower_y - 2700))
-    _draw_reinforcement_legend(msp, Point2D(x=origin.x + 5200, y=lower_y - 2700))
+    if project.walls or project.strip_footings:
+        _draw_wall_schedule(msp, project, Point2D(x=origin.x + 11700, y=lower_y))
+        _draw_strip_footing_schedule(msp, project, Point2D(x=origin.x, y=lower_y - 2700))
+        _draw_opening_schedule(msp, project, Point2D(x=origin.x + 3900, y=lower_y - 2700))
+        takeoff_y = lower_y - 5400
+    elif project.steel_members:
+        _draw_steel_member_schedule(msp, project, Point2D(x=origin.x, y=lower_y - 2700))
+        takeoff_y = lower_y - 5400
+    else:
+        takeoff_y = lower_y - 2700
+    _draw_material_takeoff(msp, project, rows, Point2D(x=origin.x, y=takeoff_y))
+    _draw_reinforcement_legend(msp, Point2D(x=origin.x + 5200, y=takeoff_y))
 
 
 def _draw_table(msp, origin: Point2D, title: str, headers: list[str], rows: list[list[str]], widths: list[float], row_height: float = 260) -> None:
@@ -589,14 +791,61 @@ def _draw_beam_schedule(msp, project: StructuraProject, origin: Point2D) -> None
     _draw_table(msp, origin, "BEAM SCHEDULE", ["ID", "L", "B", "D", "REINF."], rows[:12], [620, 700, 560, 560, 1350], row_height=230)
 
 
+def _draw_strip_footing_schedule(msp, project: StructuraProject, origin: Point2D) -> None:
+    rows = [
+        [strip.id, f"{math.hypot(strip.end.x - strip.start.x, strip.end.y - strip.start.y):.0f}", f"{strip.width_mm:.0f}", f"{strip.depth_mm:.0f}", _first_rebar_label(strip.rebar, "-")]
+        for strip in project.strip_footings
+    ]
+    _draw_table(msp, origin, "STRIP FOOTING SCHEDULE", ["ID", "L", "B", "D", "REINF."], rows[:8], [900, 650, 560, 560, 1350], row_height=230)
+
+
+def _draw_wall_schedule(msp, project: StructuraProject, origin: Point2D) -> None:
+    rows = [
+        [
+            wall.id,
+            f"{math.hypot(wall.end.x - wall.start.x, wall.end.y - wall.start.y):.0f}",
+            f"{wall.thickness_mm:.0f}",
+            f"{wall.top_elevation_mm - wall.base_elevation_mm:.0f}",
+            wall.wall_type.upper().replace("_", " "),
+        ]
+        for wall in project.walls
+    ]
+    _draw_table(msp, origin, "WALL / CORE SCHEDULE", ["ID", "L", "T", "H", "TYPE"], rows[:8], [900, 650, 560, 650, 1500], row_height=230)
+
+
+def _draw_opening_schedule(msp, project: StructuraProject, origin: Point2D) -> None:
+    rows = [
+        [opening.id, opening.host_id, f"{opening.width_mm:.0f}", f"{opening.height_mm:.0f}", f"{opening.sill_elevation_mm:.0f}"]
+        for opening in project.openings
+    ]
+    _draw_table(msp, origin, "OPENING SCHEDULE", ["ID", "HOST", "W", "H", "SILL"], rows[:8], [850, 950, 560, 560, 650], row_height=230)
+
+
+def _draw_steel_member_schedule(msp, project: StructuraProject, origin: Point2D) -> None:
+    rows = [
+        [
+            member.id,
+            member.member_type.upper(),
+            member.section,
+            f"{_steel_length(member):.0f}",
+            member.connection_note[:24] or "-",
+        ]
+        for member in project.steel_members
+    ]
+    _draw_table(msp, origin, "STEEL MEMBER SCHEDULE", ["ID", "TYPE", "SECTION", "L", "CONNECTION"], rows[:20], [900, 900, 1300, 650, 1800], row_height=230)
+
+
 def _draw_material_takeoff(msp, project: StructuraProject, rows: list[BarScheduleRow], origin: Point2D) -> None:
     concrete_m3 = _concrete_volume_m3(project)
     rebar_kg = sum(row.total_weight_kg for row in rows)
+    steel_m = sum(_steel_length(member) for member in project.steel_members) / 1000
     takeoff_rows = [
         ["CONCRETE", f"{concrete_m3:.2f}", "m3"],
         ["REBAR", f"{rebar_kg:.1f}", "kg"],
-        ["FORMWORK REVIEW", "BY ENGINEER", "-"],
     ]
+    if project.steel_members:
+        takeoff_rows.append(["STRUCTURAL STEEL", f"{steel_m:.1f}", "m"])
+    takeoff_rows.append(["FORMWORK REVIEW", "BY ENGINEER", "-"])
     _draw_table(msp, origin, "MATERIAL TAKEOFF", ["ITEM", "QTY", "UNIT"], takeoff_rows, [1700, 1100, 850], row_height=250)
     _add_multiline(msp, "NOTE:\nQuantities are generated from the internal model.\nEngineer must verify loads, soil, and code design.", origin.x, origin.y - 1900, 115, "SAI-A-TEXT")
 
@@ -642,6 +891,18 @@ def _bar_schedule_rows(project: StructuraProject) -> list[BarScheduleRow]:
                 count = max(2, math.floor((min(footing.width_mm, footing.length_mm) - 2 * bar.cover_mm) / spacing) + 1)
                 length = max(footing.width_mm, footing.length_mm) - 2 * bar.cover_mm
             rows.append(_row(bar, footing.id, length, count, "A"))
+    for strip in project.strip_footings:
+        span = math.hypot(strip.end.x - strip.start.x, strip.end.y - strip.start.y)
+        for bar in strip.rebar:
+            if bar.direction == "longitudinal":
+                count = max(2, math.floor((strip.width_mm - 2 * bar.cover_mm) / (bar.spacing_mm or 150)) + 1)
+                length = span + 2 * 300
+                shape = "STRAIGHT"
+            else:
+                count = max(2, math.floor(span / (bar.spacing_mm or 150)) + 1)
+                length = strip.width_mm - 2 * bar.cover_mm + 2 * 150
+                shape = "U"
+            rows.append(_row(bar, strip.id, length, count, shape))
     for column in project.columns:
         height = column.top_elevation_mm - column.base_elevation_mm
         for bar in column.rebar:
@@ -680,6 +941,19 @@ def _bar_schedule_rows(project: StructuraProject) -> list[BarScheduleRow]:
                 count = max(2, math.floor(width / spacing) + 1)
                 bar_length = length - 2 * bar.cover_mm
             rows.append(_row(bar, slab.id, bar_length, count, "STRAIGHT"))
+    for wall in project.walls:
+        height = wall.top_elevation_mm - wall.base_elevation_mm
+        length = math.hypot(wall.end.x - wall.start.x, wall.end.y - wall.start.y)
+        for bar in wall.rebar:
+            if bar.direction == "longitudinal":
+                count = max(2, math.floor(length / (bar.spacing_mm or 200)) + 1)
+                bar_length = height + 650
+                shape = "VERT"
+            else:
+                count = max(2, math.floor(height / (bar.spacing_mm or 200)) + 1)
+                bar_length = length - 2 * bar.cover_mm
+                shape = "HORZ"
+            rows.append(_row(bar, wall.id, bar_length, count, shape))
     return rows
 
 
@@ -699,10 +973,21 @@ def _row(bar: RebarSpec, element_id: str, length_mm: float, count: int, shape: s
     )
 
 
+def _steel_length(member: SteelMember) -> float:
+    return math.sqrt(
+        (member.end.x - member.start.x) ** 2
+        + (member.end.y - member.start.y) ** 2
+        + (member.end.z - member.start.z) ** 2
+    )
+
+
 def _concrete_volume_m3(project: StructuraProject) -> float:
     total_mm3 = 0.0
     for footing in project.footings:
         total_mm3 += footing.width_mm * footing.length_mm * footing.depth_mm
+    for strip in project.strip_footings:
+        length = math.hypot(strip.end.x - strip.start.x, strip.end.y - strip.start.y)
+        total_mm3 += strip.width_mm * strip.depth_mm * length
     for column in project.columns:
         total_mm3 += column.width_mm * column.depth_mm * (column.top_elevation_mm - column.base_elevation_mm)
     for beam in project.beams:
@@ -710,6 +995,15 @@ def _concrete_volume_m3(project: StructuraProject) -> float:
         total_mm3 += beam.width_mm * beam.depth_mm * length
     for slab in project.slabs:
         total_mm3 += _polygon_area(slab.boundary) * slab.thickness_mm
+    for wall in project.walls:
+        length = math.hypot(wall.end.x - wall.start.x, wall.end.y - wall.start.y)
+        opening_area = sum(
+            opening.width_mm * opening.height_mm
+            for opening in project.openings
+            if opening.host_id == wall.id
+        )
+        gross_area = length * (wall.top_elevation_mm - wall.base_elevation_mm)
+        total_mm3 += wall.thickness_mm * max(gross_area - opening_area, 0)
     return total_mm3 / 1_000_000_000
 
 

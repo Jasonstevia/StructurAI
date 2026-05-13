@@ -32,6 +32,14 @@ class AgentResult:
     preview_path: Path
 
 
+@dataclass(frozen=True)
+class DesignBrief:
+    width_mm: float
+    length_mm: float
+    story_count: int
+    title: str
+
+
 def load_env(path: Path = Path(".env")) -> None:
     if not path.exists():
         return
@@ -47,14 +55,30 @@ class AgentController:
     def __init__(self, model_name: str = "gemini-3.1-flash-lite", max_retries: int = 3, use_ai: bool = True, logger: LogFn | None = None):
         load_env()
         self.model_name = os.getenv("GEMINI_MODEL", model_name)
+        self.gemini_timeout_ms = int(os.getenv("GEMINI_TIMEOUT_MS", "20000"))
         self.max_retries = max_retries
         self.use_ai = use_ai
         self.logger = logger or (lambda message: None)
 
     def run(self, prompt: str, context: ExtractedContext | None = None, output_dir: Path = Path("outputs/latest")) -> AgentResult:
         self.logger("Agent: Creating structural JSON model...")
+        brief = _infer_design_brief(prompt)
+        steel_comment_task = _is_steel_comment_task(prompt, context)
+        pipe_support_task = _is_pipe_support_task(prompt, context)
         project = self._generate_project(prompt, context)
-        StructuraTools(project).ensure_professional_drawing_package()
+        if pipe_support_task:
+            self.logger("Compiler: Building fire-fighting pipe support coordination package from drawing context.")
+            StructuraTools(project).create_pipe_support_coordination_package()
+        elif steel_comment_task:
+            self.logger("Compiler: Building structural steel bracing response from drawing/comment context.")
+            StructuraTools(project).create_steel_bracing_comment_resolution()
+        else:
+            self.logger(
+                "Compiler: Completing structural scope "
+                f"({brief.width_mm:.0f}x{brief.length_mm:.0f}mm, {brief.story_count} "
+                f"{'story' if brief.story_count == 1 else 'stories'})."
+            )
+            StructuraTools(project).ensure_building_frame(brief.width_mm, brief.length_mm, brief.story_count, brief.title)
         validation = validate_project(project)
 
         for attempt in range(1, self.max_retries + 1):
@@ -118,20 +142,31 @@ class AgentController:
             from google import genai
 
             schema = StructuraProject.model_json_schema()
-            client = genai.Client(api_key=api_key)
-            response = client.models.generate_content(
-                model=self.model_name,
-                contents=[
-                    SYSTEM_PROMPT,
-                    f"User request: {prompt}",
-                    f"Existing extracted context: {context.model_dump() if context else {}}",
-                    f"JSON schema: {json.dumps(schema)}",
-                ],
-            )
-            text = getattr(response, "text", "") or ""
-            return StructuraProject.model_validate_json(_extract_json(text))
+            client = genai.Client(api_key=api_key, http_options={"timeout": self.gemini_timeout_ms})
+            last_error: Exception | None = None
+            for model_name in _candidate_models(self.model_name):
+                try:
+                    response = client.models.generate_content(
+                        model=model_name,
+                        contents=[
+                            SYSTEM_PROMPT,
+                            f"User request: {prompt}",
+                            f"Existing extracted context: {context.model_dump() if context else {}}",
+                            f"JSON schema: {json.dumps(schema)}",
+                        ],
+                    )
+                    text = getattr(response, "text", "") or ""
+                    project = StructuraProject.model_validate_json(_extract_json(text))
+                    if model_name != self.model_name:
+                        self.logger(f"Agent: Gemini generated model with fallback model {model_name}.")
+                    return project
+                except Exception as exc:
+                    last_error = exc
+                    self.logger(f"Agent: Gemini model {model_name} did not return a valid project ({exc.__class__.__name__}).")
+            if last_error:
+                self.logger(f"Agent: Gemini unavailable or returned invalid JSON; using deterministic bootstrap ({last_error.__class__.__name__}).")
         except Exception as exc:
-            self.logger(f"Agent: Gemini unavailable or returned invalid JSON; using deterministic bootstrap ({exc.__class__.__name__}).")
+            self.logger(f"Agent: Gemini client unavailable; using deterministic bootstrap ({exc.__class__.__name__}).")
             return None
 
     def _repair_project(self, project: StructuraProject, validation: ValidationReport) -> StructuraProject:
@@ -181,27 +216,47 @@ class AgentController:
         try:
             from google import genai
 
-            client = genai.Client(api_key=api_key)
-            response = client.models.generate_content(
-                model=self.model_name,
-                contents=[
-                    SYSTEM_PROMPT,
-                    REPAIR_PROMPT,
-                    json.dumps(validation.to_dict()),
-                    project.model_dump_json(),
-                ],
-            )
-            text = getattr(response, "text", "") or ""
-            return StructuraProject.model_validate_json(_extract_json(text))
+            client = genai.Client(api_key=api_key, http_options={"timeout": self.gemini_timeout_ms})
+            for model_name in _candidate_models(self.model_name):
+                try:
+                    response = client.models.generate_content(
+                        model=model_name,
+                        contents=[
+                            SYSTEM_PROMPT,
+                            REPAIR_PROMPT,
+                            json.dumps(validation.to_dict()),
+                            project.model_dump_json(),
+                        ],
+                    )
+                    text = getattr(response, "text", "") or ""
+                    return StructuraProject.model_validate_json(_extract_json(text))
+                except Exception:
+                    continue
         except Exception:
             return None
+        return None
 
     def _deterministic_bootstrap(self, prompt: str, context: ExtractedContext | None) -> StructuraProject:
         project = StructuraProject(title="StructurAI Drafting Package", extracted_context=context)
-        width, length = _infer_dimensions(prompt)
-        lower = prompt.lower()
-        title = "RC Pump Room" if "pump" in lower else "RC Structural Room"
-        return StructuraTools(project).create_small_rc_room(width, length, title)
+        if _is_pipe_support_task(prompt, context):
+            return StructuraTools(project).create_pipe_support_coordination_package()
+        if _is_steel_comment_task(prompt, context):
+            return StructuraTools(project).create_steel_bracing_comment_resolution()
+        brief = _infer_design_brief(prompt)
+        return StructuraTools(project).ensure_building_frame(brief.width_mm, brief.length_mm, brief.story_count, brief.title)
+
+
+def _candidate_models(primary: str) -> list[str]:
+    fallback_text = os.getenv(
+        "GEMINI_FALLBACK_MODELS",
+        "gemini-3.1-flash-lite-preview,gemini-flash-lite-latest,gemini-2.5-flash-lite,gemini-2.0-flash-lite",
+    )
+    names = [primary, *(name.strip() for name in fallback_text.split(",") if name.strip())]
+    deduped: list[str] = []
+    for name in names:
+        if name not in deduped:
+            deduped.append(name)
+    return deduped
 
 
 def _extract_json(text: str) -> str:
@@ -217,13 +272,78 @@ def _extract_json(text: str) -> str:
 
 
 def _infer_dimensions(prompt: str) -> tuple[float, float]:
-    matches = re.findall(r"(\d+(?:\.\d+)?)\s*(?:x|by|\*)\s*(\d+(?:\.\d+)?)\s*(mm|m)?", prompt, flags=re.IGNORECASE)
+    matches = re.findall(
+        r"(\d+(?:\.\d+)?)\s*(mm|m)?\s*(?:x|by|\*)\s*(\d+(?:\.\d+)?)\s*(mm|m)?",
+        prompt,
+        flags=re.IGNORECASE,
+    )
     if matches:
-        a, b, unit = matches[0]
-        width = float(a)
-        length = float(b)
-        if unit.lower() == "m" or (width < 100 and length < 100):
-            width *= 1000
-            length *= 1000
+        a, unit_a, b, unit_b = matches[0]
+        width = _to_mm(float(a), unit_a, float(a) < 100 and float(b) < 100)
+        length = _to_mm(float(b), unit_b or unit_a, float(a) < 100 and float(b) < 100)
         return width, length
     return 3000.0, 4000.0
+
+
+def _to_mm(value: float, unit: str, assume_meters: bool) -> float:
+    normalized = unit.lower()
+    if normalized == "m" or (not normalized and assume_meters):
+        return value * 1000
+    return value
+
+
+def _infer_story_count(prompt: str) -> int:
+    lower = prompt.lower()
+    numeric = re.search(r"\b(\d+)\s*[- ]?\s*(?:story|stories|storey|storeys)\b", lower)
+    if numeric:
+        return max(1, int(numeric.group(1)))
+    words = {
+        "one": 1,
+        "single": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5,
+        "six": 6,
+    }
+    for word, value in words.items():
+        if re.search(rf"\b{word}\s*[- ]?\s*(?:story|stories|storey|storeys)\b", lower):
+            return value
+    return 1
+
+
+def _infer_title(prompt: str) -> str:
+    lower = prompt.lower()
+    if "pump" in lower:
+        return "RC Pump Room"
+    if "office" in lower:
+        return "RC Office Building"
+    if "building" in lower:
+        return "RC Building"
+    return "RC Structural Room"
+
+
+def _infer_design_brief(prompt: str) -> DesignBrief:
+    width, length = _infer_dimensions(prompt)
+    return DesignBrief(width_mm=width, length_mm=length, story_count=_infer_story_count(prompt), title=_infer_title(prompt))
+
+
+def _is_steel_comment_task(prompt: str, context: ExtractedContext | None) -> bool:
+    text = prompt.lower()
+    if context:
+        text += " " + " ".join(context.notes).lower()
+        for line in context.lines:
+            text += " " + str(line.get("text", "")).lower()
+    steel_signals = {"bracing", "unsupported", "steel", "conveyor", "platform", "square hollow", "shs", "pipe", "red pen"}
+    return any(signal in text for signal in steel_signals) and any(signal in text for signal in {"bracing", "unsupported", "red pen"})
+
+
+def _is_pipe_support_task(prompt: str, context: ExtractedContext | None) -> bool:
+    text = prompt.lower()
+    if context:
+        text += " " + " ".join(context.notes).lower()
+        for line in context.lines:
+            text += " " + str(line.get("text", "")).lower()
+    pipe_signals = {"fire fighting", "fire-fighting", "nps", "cs,sch40", "pipe", "hose cabinet", "production shed"}
+    support_signals = {"support", "coordination", "shed", "pipe support", "fire-fighting lines"}
+    return any(signal in text for signal in pipe_signals) and any(signal in text for signal in support_signals)

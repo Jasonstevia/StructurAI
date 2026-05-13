@@ -4,8 +4,10 @@ from pathlib import Path
 
 from backend.agent.agent_controller import AgentController, AgentResult
 from backend.core.structura_model import ExtractedContext
+from backend.extractors.dwg_importer import extract_dwg_context
 from backend.extractors.dxf_importer import extract_dxf_context
 from backend.extractors.ifc_importer import extract_ifc_context
+from backend.extractors.pdf_importer import extract_pdf_context
 from backend.extractors.revit_adapter import extract_revit_context
 
 
@@ -15,8 +17,12 @@ def route_input(prompt: str, upload_path: Path | None = None, output_dir: Path =
         suffix = upload_path.suffix.lower()
         if suffix == ".dxf":
             context = extract_dxf_context(upload_path)
+        elif suffix == ".dwg":
+            context = extract_dwg_context(upload_path)
         elif suffix == ".ifc":
             context = extract_ifc_context(upload_path)
+        elif suffix == ".pdf":
+            context = extract_pdf_context(upload_path)
         elif suffix == ".rvt":
             extract_revit_context(upload_path)
         elif suffix == ".json":

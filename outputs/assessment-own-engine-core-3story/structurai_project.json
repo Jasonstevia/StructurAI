@@ -1,0 +1,5439 @@
+{
+  "project_id": "structurai-project",
+  "title": "RC Office Building",
+  "units": "mm",
+  "description": "AI-generated reinforced concrete structural drafting package, 18000x12000mm, 3 stories.",
+  "levels": [
+    {
+      "id": "L-FOUNDATION",
+      "elevation_mm": -500.0,
+      "name": "Foundation Top"
+    },
+    {
+      "id": "L-GROUND",
+      "elevation_mm": 0.0,
+      "name": "Ground Floor"
+    },
+    {
+      "id": "L-FLOOR-1",
+      "elevation_mm": 3500.0,
+      "name": "Level 1"
+    },
+    {
+      "id": "L-FLOOR-2",
+      "elevation_mm": 7000.0,
+      "name": "Level 2"
+    },
+    {
+      "id": "L-ROOF",
+      "elevation_mm": 10500.0,
+      "name": "Roof"
+    }
+  ],
+  "grid_lines": [
+    {
+      "id": "GX-1",
+      "axis": "x",
+      "offset_mm": 0.0,
+      "label": "1"
+    },
+    {
+      "id": "GX-2",
+      "axis": "x",
+      "offset_mm": 6000.0,
+      "label": "2"
+    },
+    {
+      "id": "GX-3",
+      "axis": "x",
+      "offset_mm": 12000.0,
+      "label": "3"
+    },
+    {
+      "id": "GX-4",
+      "axis": "x",
+      "offset_mm": 18000.0,
+      "label": "4"
+    },
+    {
+      "id": "GY-1",
+      "axis": "y",
+      "offset_mm": 0.0,
+      "label": "A"
+    },
+    {
+      "id": "GY-2",
+      "axis": "y",
+      "offset_mm": 4000.0,
+      "label": "B"
+    },
+    {
+      "id": "GY-3",
+      "axis": "y",
+      "offset_mm": 8000.0,
+      "label": "C"
+    },
+    {
+      "id": "GY-4",
+      "axis": "y",
+      "offset_mm": 12000.0,
+      "label": "D"
+    }
+  ],
+  "footings": [
+    {
+      "id": "F1",
+      "center": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F1-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F1-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "center": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F2-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F2-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "center": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F3-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F3-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "center": {
+        "x": 18000.0,
+        "y": 0.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F4-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F4-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F5",
+      "center": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F5-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F5-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F6",
+      "center": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F6-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F6-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F7",
+      "center": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F7-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F7-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F8",
+      "center": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F8-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F8-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F9",
+      "center": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F9-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F9-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F10",
+      "center": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F10-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F10-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F11",
+      "center": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F11-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F11-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F12",
+      "center": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F12-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F12-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F13",
+      "center": {
+        "x": 0.0,
+        "y": 12000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F13-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F13-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F14",
+      "center": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F14-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F14-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F15",
+      "center": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F15-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F15-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "F16",
+      "center": {
+        "x": 18000.0,
+        "y": 12000.0
+      },
+      "width_mm": 2400.0,
+      "length_mm": 2400.0,
+      "depth_mm": 650.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "F16-BOT-X",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "F16-BOT-Y",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "strip_footings": [
+    {
+      "id": "SF-CORE-W-N",
+      "start": {
+        "x": 7380.0,
+        "y": 7500.0
+      },
+      "end": {
+        "x": 10620.0,
+        "y": 7500.0
+      },
+      "width_mm": 1050.0,
+      "depth_mm": 550.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "SF-CORE-BOT-LONG",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "longitudinal",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "SF-CORE-BOT-TRANS",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "SF-CORE-W-E",
+      "start": {
+        "x": 10620.0,
+        "y": 4500.0
+      },
+      "end": {
+        "x": 10620.0,
+        "y": 7500.0
+      },
+      "width_mm": 1050.0,
+      "depth_mm": 550.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "SF-CORE-BOT-LONG",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "longitudinal",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "SF-CORE-BOT-TRANS",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "SF-CORE-W-S",
+      "start": {
+        "x": 7380.0,
+        "y": 4500.0
+      },
+      "end": {
+        "x": 10620.0,
+        "y": 4500.0
+      },
+      "width_mm": 1050.0,
+      "depth_mm": 550.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "SF-CORE-BOT-LONG",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "longitudinal",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "SF-CORE-BOT-TRANS",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "SF-CORE-W-W",
+      "start": {
+        "x": 7380.0,
+        "y": 4500.0
+      },
+      "end": {
+        "x": 7380.0,
+        "y": 7500.0
+      },
+      "width_mm": 1050.0,
+      "depth_mm": 550.0,
+      "top_elevation_mm": -500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "SF-CORE-BOT-LONG",
+          "diameter_mm": 16,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "longitudinal",
+          "cover_mm": 75,
+          "note": ""
+        },
+        {
+          "mark": "SF-CORE-BOT-TRANS",
+          "diameter_mm": 12,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 75,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "columns": [
+    {
+      "id": "C1",
+      "center": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C1-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C1-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "center": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C2-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C2-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "center": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C3-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C3-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "center": {
+        "x": 18000.0,
+        "y": 0.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C4-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C4-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "center": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C5-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C5-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "center": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C6-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C6-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C7",
+      "center": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C7-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C7-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C8",
+      "center": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C8-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C8-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C9",
+      "center": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C9-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C9-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "center": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C10-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C10-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "center": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C11-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C11-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "center": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C12-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C12-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "center": {
+        "x": 0.0,
+        "y": 12000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C13-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C13-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C14",
+      "center": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C14-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C14-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "center": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C15-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C15-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "C16",
+      "center": {
+        "x": 18000.0,
+        "y": 12000.0
+      },
+      "width_mm": 400.0,
+      "depth_mm": 400.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "C16-VERT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 8,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "C16-TIES",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "beams": [
+    {
+      "id": "B-L1-Y1-X1",
+      "start": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y1-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y1-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y1-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y1-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y1-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y1-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y1-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y1-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y1-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y1-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y1-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y2-X1",
+      "start": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y2-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y2-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y2-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y2-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y2-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y2-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y2-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y2-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y2-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y2-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y2-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y3-X1",
+      "start": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y3-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y3-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y3-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y3-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y3-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y3-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y3-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y3-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y3-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y3-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y3-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y4-X1",
+      "start": {
+        "x": 0.0,
+        "y": 12000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y4-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y4-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y4-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y4-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y4-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y4-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y4-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-Y4-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-Y4-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y4-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-Y4-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X1-Y1",
+      "start": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X1-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X1-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X1-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X1-Y2",
+      "start": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X1-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X1-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X1-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X1-Y3",
+      "start": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X1-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X1-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X1-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X2-Y1",
+      "start": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X2-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X2-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X2-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X2-Y2",
+      "start": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X2-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X2-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X2-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X2-Y3",
+      "start": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X2-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X2-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X2-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X3-Y1",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X3-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X3-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X3-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X3-Y2",
+      "start": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X3-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X3-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X3-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X3-Y3",
+      "start": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X3-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X3-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X3-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X4-Y1",
+      "start": {
+        "x": 18000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X4-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X4-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X4-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X4-Y2",
+      "start": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X4-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X4-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X4-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L1-X4-Y3",
+      "start": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L1-X4-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X4-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L1-X4-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y1-X1",
+      "start": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y1-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y1-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y1-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y1-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y1-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y1-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y1-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y1-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y1-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y1-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y1-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y2-X1",
+      "start": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y2-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y2-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y2-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y2-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y2-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y2-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y2-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y2-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y2-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y2-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y2-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y3-X1",
+      "start": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y3-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y3-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y3-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y3-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y3-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y3-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y3-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y3-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y3-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y3-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y3-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y4-X1",
+      "start": {
+        "x": 0.0,
+        "y": 12000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y4-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y4-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y4-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y4-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y4-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y4-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y4-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-Y4-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-Y4-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y4-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-Y4-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X1-Y1",
+      "start": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X1-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X1-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X1-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X1-Y2",
+      "start": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X1-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X1-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X1-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X1-Y3",
+      "start": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X1-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X1-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X1-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X2-Y1",
+      "start": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X2-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X2-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X2-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X2-Y2",
+      "start": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X2-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X2-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X2-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X2-Y3",
+      "start": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X2-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X2-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X2-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X3-Y1",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X3-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X3-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X3-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X3-Y2",
+      "start": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X3-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X3-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X3-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X3-Y3",
+      "start": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X3-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X3-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X3-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X4-Y1",
+      "start": {
+        "x": 18000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X4-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X4-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X4-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X4-Y2",
+      "start": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X4-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X4-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X4-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L2-X4-Y3",
+      "start": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L2-X4-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X4-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L2-X4-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y1-X1",
+      "start": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y1-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y1-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y1-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y1-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y1-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y1-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y1-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y1-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 0.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y1-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y1-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y1-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y2-X1",
+      "start": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y2-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y2-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y2-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y2-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y2-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y2-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y2-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y2-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y2-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y2-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y2-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y3-X1",
+      "start": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y3-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y3-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y3-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y3-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y3-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y3-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y3-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y3-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y3-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y3-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y3-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y4-X1",
+      "start": {
+        "x": 0.0,
+        "y": 12000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y4-X1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y4-X1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y4-X1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y4-X2",
+      "start": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y4-X2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y4-X2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y4-X2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-Y4-X3",
+      "start": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 500.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-Y4-X3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y4-X3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-Y4-X3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X1-Y1",
+      "start": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X1-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X1-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X1-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X1-Y2",
+      "start": {
+        "x": 0.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X1-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X1-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X1-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X1-Y3",
+      "start": {
+        "x": 0.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X1-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X1-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X1-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X2-Y1",
+      "start": {
+        "x": 6000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X2-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X2-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X2-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X2-Y2",
+      "start": {
+        "x": 6000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X2-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X2-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X2-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X2-Y3",
+      "start": {
+        "x": 6000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X2-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X2-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X2-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X3-Y1",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X3-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X3-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X3-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X3-Y2",
+      "start": {
+        "x": 12000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X3-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X3-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X3-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X3-Y3",
+      "start": {
+        "x": 12000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X3-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X3-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X3-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X4-Y1",
+      "start": {
+        "x": 18000.0,
+        "y": 0.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X4-Y1-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X4-Y1-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X4-Y1-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X4-Y2",
+      "start": {
+        "x": 18000.0,
+        "y": 4000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X4-Y2-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X4-Y2-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X4-Y2-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "B-L3-X4-Y3",
+      "start": {
+        "x": 18000.0,
+        "y": 8000.0
+      },
+      "end": {
+        "x": 18000.0,
+        "y": 12000.0
+      },
+      "width_mm": 300.0,
+      "depth_mm": 450.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "B-L3-X4-Y3-TOP",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X4-Y3-BOT",
+          "diameter_mm": 20,
+          "spacing_mm": null,
+          "quantity": 2,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "B-L3-X4-Y3-STIR",
+          "diameter_mm": 8,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "slabs": [
+    {
+      "id": "S-L1",
+      "boundary": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 18000.0,
+          "y": 0.0
+        },
+        {
+          "x": 18000.0,
+          "y": 12000.0
+        },
+        {
+          "x": 0.0,
+          "y": 12000.0
+        }
+      ],
+      "thickness_mm": 180.0,
+      "elevation_mm": 3500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "S-L1-X",
+          "diameter_mm": 14,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 30,
+          "note": ""
+        },
+        {
+          "mark": "S-L1-Y",
+          "diameter_mm": 14,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 30,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "S-L2",
+      "boundary": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 18000.0,
+          "y": 0.0
+        },
+        {
+          "x": 18000.0,
+          "y": 12000.0
+        },
+        {
+          "x": 0.0,
+          "y": 12000.0
+        }
+      ],
+      "thickness_mm": 180.0,
+      "elevation_mm": 7000.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "S-L2-X",
+          "diameter_mm": 14,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 30,
+          "note": ""
+        },
+        {
+          "mark": "S-L2-Y",
+          "diameter_mm": 14,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 30,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "S-ROOF",
+      "boundary": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 18000.0,
+          "y": 0.0
+        },
+        {
+          "x": 18000.0,
+          "y": 12000.0
+        },
+        {
+          "x": 0.0,
+          "y": 12000.0
+        }
+      ],
+      "thickness_mm": 180.0,
+      "elevation_mm": 10500.0,
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "S-ROOF-X",
+          "diameter_mm": 14,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "x",
+          "cover_mm": 30,
+          "note": ""
+        },
+        {
+          "mark": "S-ROOF-Y",
+          "diameter_mm": 14,
+          "spacing_mm": 150,
+          "quantity": null,
+          "direction": "y",
+          "cover_mm": 30,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "walls": [
+    {
+      "id": "CORE-W-N",
+      "start": {
+        "x": 7380.0,
+        "y": 7500.0
+      },
+      "end": {
+        "x": 10620.0,
+        "y": 7500.0
+      },
+      "thickness_mm": 250.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "wall_type": "rc_core_wall",
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "CORE-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": 200,
+          "quantity": null,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "CORE-HORZ",
+          "diameter_mm": 12,
+          "spacing_mm": 200,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "CORE-W-E",
+      "start": {
+        "x": 10620.0,
+        "y": 4500.0
+      },
+      "end": {
+        "x": 10620.0,
+        "y": 7500.0
+      },
+      "thickness_mm": 250.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "wall_type": "rc_core_wall",
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "CORE-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": 200,
+          "quantity": null,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "CORE-HORZ",
+          "diameter_mm": 12,
+          "spacing_mm": 200,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "CORE-W-S",
+      "start": {
+        "x": 7380.0,
+        "y": 4500.0
+      },
+      "end": {
+        "x": 10620.0,
+        "y": 4500.0
+      },
+      "thickness_mm": 250.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "wall_type": "rc_core_wall",
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "CORE-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": 200,
+          "quantity": null,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "CORE-HORZ",
+          "diameter_mm": 12,
+          "spacing_mm": 200,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "CORE-W-W",
+      "start": {
+        "x": 7380.0,
+        "y": 4500.0
+      },
+      "end": {
+        "x": 7380.0,
+        "y": 7500.0
+      },
+      "thickness_mm": 250.0,
+      "base_elevation_mm": -500.0,
+      "top_elevation_mm": 10500.0,
+      "wall_type": "rc_core_wall",
+      "concrete_grade": "C30",
+      "rebar": [
+        {
+          "mark": "CORE-VERT",
+          "diameter_mm": 16,
+          "spacing_mm": 200,
+          "quantity": null,
+          "direction": "longitudinal",
+          "cover_mm": 40,
+          "note": ""
+        },
+        {
+          "mark": "CORE-HORZ",
+          "diameter_mm": 12,
+          "spacing_mm": 200,
+          "quantity": null,
+          "direction": "transverse",
+          "cover_mm": 40,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "openings": [
+    {
+      "id": "OP-CORE-S-1",
+      "host_id": "CORE-W-S",
+      "center": {
+        "x": 9000.0,
+        "y": 4500.0
+      },
+      "width_mm": 1000.0,
+      "height_mm": 2100.0,
+      "sill_elevation_mm": 0.0,
+      "opening_type": "door"
+    },
+    {
+      "id": "OP-CORE-S-2",
+      "host_id": "CORE-W-S",
+      "center": {
+        "x": 9000.0,
+        "y": 4500.0
+      },
+      "width_mm": 1000.0,
+      "height_mm": 2100.0,
+      "sill_elevation_mm": 3500.0,
+      "opening_type": "door"
+    },
+    {
+      "id": "OP-CORE-S-3",
+      "host_id": "CORE-W-S",
+      "center": {
+        "x": 9000.0,
+        "y": 4500.0
+      },
+      "width_mm": 1000.0,
+      "height_mm": 2100.0,
+      "sill_elevation_mm": 7000.0,
+      "opening_type": "door"
+    }
+  ],
+  "drawing_package": {
+    "views": [
+      {
+        "id": "V-FOUNDATION",
+        "view_type": "foundation_plan",
+        "title": "Foundation Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-FLOOR-1",
+        "view_type": "floor_framing_plan",
+        "title": "Level 1 Framing Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-FLOOR-2",
+        "view_type": "floor_framing_plan",
+        "title": "Level 2 Framing Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-ROOF",
+        "view_type": "roof_framing_plan",
+        "title": "Roof Framing Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-SECTION-A",
+        "view_type": "section",
+        "title": "Section A-A",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-SECTION-B",
+        "view_type": "section",
+        "title": "Section B-B",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-FOOTING-DETAIL",
+        "view_type": "detail",
+        "title": "Isolated Footing Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-COLUMN-DETAIL",
+        "view_type": "detail",
+        "title": "Column Reinforcement Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-ROOF-DETAIL",
+        "view_type": "detail",
+        "title": "Roof Slab Reinforcement Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-WALL-DETAIL",
+        "view_type": "detail",
+        "title": "Core Wall and Opening Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-BBS",
+        "view_type": "schedule",
+        "title": "Bar Bending Schedule",
+        "scale": "1:50",
+        "notes": []
+      }
+    ],
+    "dimensions": [
+      {
+        "id": "D-WIDTH-TOTAL",
+        "start": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 18000.0,
+          "y": 0.0
+        },
+        "offset_mm": -1100.0,
+        "label": "18000"
+      },
+      {
+        "id": "D-LENGTH-TOTAL",
+        "start": {
+          "x": 18000.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 18000.0,
+          "y": 12000.0
+        },
+        "offset_mm": 1100.0,
+        "label": "12000"
+      },
+      {
+        "id": "D-X-BAY-1",
+        "start": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 6000.0,
+          "y": 0.0
+        },
+        "offset_mm": -700.0,
+        "label": "6000"
+      },
+      {
+        "id": "D-X-BAY-2",
+        "start": {
+          "x": 6000.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 12000.0,
+          "y": 0.0
+        },
+        "offset_mm": -700.0,
+        "label": "6000"
+      },
+      {
+        "id": "D-X-BAY-3",
+        "start": {
+          "x": 12000.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 18000.0,
+          "y": 0.0
+        },
+        "offset_mm": -700.0,
+        "label": "6000"
+      },
+      {
+        "id": "D-Y-BAY-1",
+        "start": {
+          "x": 18000.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 18000.0,
+          "y": 4000.0
+        },
+        "offset_mm": 700.0,
+        "label": "4000"
+      },
+      {
+        "id": "D-Y-BAY-2",
+        "start": {
+          "x": 18000.0,
+          "y": 4000.0
+        },
+        "end": {
+          "x": 18000.0,
+          "y": 8000.0
+        },
+        "offset_mm": 700.0,
+        "label": "4000"
+      },
+      {
+        "id": "D-Y-BAY-3",
+        "start": {
+          "x": 18000.0,
+          "y": 8000.0
+        },
+        "end": {
+          "x": 18000.0,
+          "y": 12000.0
+        },
+        "offset_mm": 700.0,
+        "label": "4000"
+      }
+    ],
+    "sections": [
+      {
+        "id": "SEC-A",
+        "label": "A-A",
+        "start": {
+          "x": -500.0,
+          "y": 6000.0
+        },
+        "end": {
+          "x": 18500.0,
+          "y": 6000.0
+        },
+        "target_view_id": null
+      },
+      {
+        "id": "SEC-B",
+        "label": "B-B",
+        "start": {
+          "x": 9000.0,
+          "y": -500.0
+        },
+        "end": {
+          "x": 9000.0,
+          "y": 12500.0
+        },
+        "target_view_id": null
+      }
+    ],
+    "details": [
+      {
+        "id": "DET-FOOTING-PLAN-SECTION",
+        "detail_type": "isolated_footing",
+        "title": "Typical Isolated Footing Plan and Section",
+        "source_entity_id": "F1",
+        "scale": "1:25",
+        "parameters": {
+          "show_rebar": true,
+          "show_cover": true,
+          "show_subgrade": true
+        }
+      },
+      {
+        "id": "DET-COLUMN-STARTER",
+        "detail_type": "column_reinforcement",
+        "title": "Typical Column Starter Bars and Ties",
+        "source_entity_id": "C1",
+        "scale": "1:25",
+        "parameters": {
+          "lap_length_mm": 650,
+          "starter_projection_mm": 600
+        }
+      },
+      {
+        "id": "DET-ROOF-SLAB",
+        "detail_type": "roof_slab_reinforcement",
+        "title": "Typical Roof Slab Reinforcement",
+        "source_entity_id": "S-L1",
+        "scale": "1:25",
+        "parameters": {
+          "top_cover_mm": 30,
+          "bottom_cover_mm": 30
+        }
+      },
+      {
+        "id": "DET-CORE-WALL",
+        "detail_type": "wall_reinforcement",
+        "title": "Typical RC Core Wall Reinforcement",
+        "source_entity_id": "CORE-W-N",
+        "scale": "1:25",
+        "parameters": {
+          "boundary_bars": "T16",
+          "web_rebar": "T12 @200 each face"
+        }
+      },
+      {
+        "id": "DET-WALL-OPENING",
+        "detail_type": "core_wall_opening",
+        "title": "Typical Wall Opening Trimmer Bars",
+        "source_entity_id": "CORE-W-N",
+        "scale": "1:25",
+        "parameters": {
+          "trimmer_bars": "2T16 each side",
+          "diagonal_bars": "2T12"
+        }
+      }
+    ],
+    "schedules": [
+      {
+        "id": "SCH-BBS",
+        "schedule_type": "bar_bending",
+        "title": "Bar Bending Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-FOOTING",
+        "schedule_type": "footing",
+        "title": "Footing Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-STRIP-FOOTING",
+        "schedule_type": "strip_footing",
+        "title": "Strip Footing Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-COLUMN",
+        "schedule_type": "column",
+        "title": "Column Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-BEAM",
+        "schedule_type": "beam",
+        "title": "Beam Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-WALL",
+        "schedule_type": "wall",
+        "title": "Wall and Core Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-OPENING",
+        "schedule_type": "opening",
+        "title": "Opening Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-MATERIAL",
+        "schedule_type": "material_takeoff",
+        "title": "Concrete and Rebar Takeoff",
+        "source_entity_ids": []
+      }
+    ],
+    "sheets": [
+      {
+        "id": "SHT-S-001",
+        "number": "S-001",
+        "title": "General Structural Arrangement",
+        "scale": "AS SHOWN",
+        "view_ids": [
+          "V-FOUNDATION",
+          "V-FLOOR-1",
+          "V-FLOOR-2",
+          "V-ROOF",
+          "V-SECTION-A",
+          "V-SECTION-B"
+        ]
+      },
+      {
+        "id": "SHT-S-002",
+        "number": "S-002",
+        "title": "Reinforcement Details and Schedules",
+        "scale": "AS SHOWN",
+        "view_ids": [
+          "V-FOOTING-DETAIL",
+          "V-COLUMN-DETAIL",
+          "V-ROOF-DETAIL",
+          "V-WALL-DETAIL",
+          "V-BBS"
+        ]
+      }
+    ],
+    "drafting_standard": {
+      "name": "StructurAI Professional RC",
+      "base_text_height_mm": 150.0,
+      "title_text_height_mm": 260.0,
+      "dimension_text_height_mm": 120.0,
+      "layer_prefix": "SAI",
+      "default_plan_scale": "1:50",
+      "default_detail_scale": "1:25"
+    },
+    "general_notes": [
+      "All dimensions are in millimeters unless noted otherwise.",
+      "Concrete grade C30 assumed for MVP drafting package; engineer to verify.",
+      "Reinforcement cover: 75mm for footings, 40mm for columns/beams/slabs unless noted.",
+      "This package is generated for engineer review and coordination, not final sealed design."
+    ]
+  },
+  "extracted_context": null,
+  "assumptions": [
+    "Rectangular reinforced-concrete frame inferred from prompt/design brief.",
+    "Support grid completed parametrically so beams and slabs have explicit supports.",
+    "Multi-story frame includes an RC core/shear-wall lateral system generated by the StructurAI engine."
+  ],
+  "change_log": [
+    "Added Level L-FOUNDATION.",
+    "Added Level L-GROUND.",
+    "Added Level L-FLOOR-1.",
+    "Added Level L-FLOOR-2.",
+    "Added Level L-ROOF.",
+    "Added GridLine GX-1.",
+    "Added GridLine GX-2.",
+    "Added GridLine GX-3.",
+    "Added GridLine GX-4.",
+    "Added GridLine GY-1.",
+    "Added GridLine GY-2.",
+    "Added GridLine GY-3.",
+    "Added GridLine GY-4.",
+    "Added Footing F1.",
+    "Added Column C1.",
+    "Added Footing F2.",
+    "Added Column C2.",
+    "Added Footing F3.",
+    "Added Column C3.",
+    "Added Footing F4.",
+    "Added Column C4.",
+    "Added Footing F5.",
+    "Added Column C5.",
+    "Added Footing F6.",
+    "Added Column C6.",
+    "Added Footing F7.",
+    "Added Column C7.",
+    "Added Footing F8.",
+    "Added Column C8.",
+    "Added Footing F9.",
+    "Added Column C9.",
+    "Added Footing F10.",
+    "Added Column C10.",
+    "Added Footing F11.",
+    "Added Column C11.",
+    "Added Footing F12.",
+    "Added Column C12.",
+    "Added Footing F13.",
+    "Added Column C13.",
+    "Added Footing F14.",
+    "Added Column C14.",
+    "Added Footing F15.",
+    "Added Column C15.",
+    "Added Footing F16.",
+    "Added Column C16.",
+    "Added Beam B-L1-Y1-X1.",
+    "Added Beam B-L1-Y1-X2.",
+    "Added Beam B-L1-Y1-X3.",
+    "Added Beam B-L1-Y2-X1.",
+    "Added Beam B-L1-Y2-X2.",
+    "Added Beam B-L1-Y2-X3.",
+    "Added Beam B-L1-Y3-X1.",
+    "Added Beam B-L1-Y3-X2.",
+    "Added Beam B-L1-Y3-X3.",
+    "Added Beam B-L1-Y4-X1.",
+    "Added Beam B-L1-Y4-X2.",
+    "Added Beam B-L1-Y4-X3.",
+    "Added Beam B-L1-X1-Y1.",
+    "Added Beam B-L1-X1-Y2.",
+    "Added Beam B-L1-X1-Y3.",
+    "Added Beam B-L1-X2-Y1.",
+    "Added Beam B-L1-X2-Y2.",
+    "Added Beam B-L1-X2-Y3.",
+    "Added Beam B-L1-X3-Y1.",
+    "Added Beam B-L1-X3-Y2.",
+    "Added Beam B-L1-X3-Y3.",
+    "Added Beam B-L1-X4-Y1.",
+    "Added Beam B-L1-X4-Y2.",
+    "Added Beam B-L1-X4-Y3.",
+    "Added Slab S-L1.",
+    "Added Beam B-L2-Y1-X1.",
+    "Added Beam B-L2-Y1-X2.",
+    "Added Beam B-L2-Y1-X3.",
+    "Added Beam B-L2-Y2-X1.",
+    "Added Beam B-L2-Y2-X2.",
+    "Added Beam B-L2-Y2-X3.",
+    "Added Beam B-L2-Y3-X1.",
+    "Added Beam B-L2-Y3-X2.",
+    "Added Beam B-L2-Y3-X3.",
+    "Added Beam B-L2-Y4-X1.",
+    "Added Beam B-L2-Y4-X2.",
+    "Added Beam B-L2-Y4-X3.",
+    "Added Beam B-L2-X1-Y1.",
+    "Added Beam B-L2-X1-Y2.",
+    "Added Beam B-L2-X1-Y3.",
+    "Added Beam B-L2-X2-Y1.",
+    "Added Beam B-L2-X2-Y2.",
+    "Added Beam B-L2-X2-Y3.",
+    "Added Beam B-L2-X3-Y1.",
+    "Added Beam B-L2-X3-Y2.",
+    "Added Beam B-L2-X3-Y3.",
+    "Added Beam B-L2-X4-Y1.",
+    "Added Beam B-L2-X4-Y2.",
+    "Added Beam B-L2-X4-Y3.",
+    "Added Slab S-L2.",
+    "Added Beam B-L3-Y1-X1.",
+    "Added Beam B-L3-Y1-X2.",
+    "Added Beam B-L3-Y1-X3.",
+    "Added Beam B-L3-Y2-X1.",
+    "Added Beam B-L3-Y2-X2.",
+    "Added Beam B-L3-Y2-X3.",
+    "Added Beam B-L3-Y3-X1.",
+    "Added Beam B-L3-Y3-X2.",
+    "Added Beam B-L3-Y3-X3.",
+    "Added Beam B-L3-Y4-X1.",
+    "Added Beam B-L3-Y4-X2.",
+    "Added Beam B-L3-Y4-X3.",
+    "Added Beam B-L3-X1-Y1.",
+    "Added Beam B-L3-X1-Y2.",
+    "Added Beam B-L3-X1-Y3.",
+    "Added Beam B-L3-X2-Y1.",
+    "Added Beam B-L3-X2-Y2.",
+    "Added Beam B-L3-X2-Y3.",
+    "Added Beam B-L3-X3-Y1.",
+    "Added Beam B-L3-X3-Y2.",
+    "Added Beam B-L3-X3-Y3.",
+    "Added Beam B-L3-X4-Y1.",
+    "Added Beam B-L3-X4-Y2.",
+    "Added Beam B-L3-X4-Y3.",
+    "Added Slab S-ROOF.",
+    "Added Wall CORE-W-N.",
+    "Added StripFooting SF-CORE-W-N.",
+    "Added Wall CORE-W-E.",
+    "Added StripFooting SF-CORE-W-E.",
+    "Added Wall CORE-W-S.",
+    "Added StripFooting SF-CORE-W-S.",
+    "Added Wall CORE-W-W.",
+    "Added StripFooting SF-CORE-W-W.",
+    "Added Opening OP-CORE-S-1.",
+    "Added Opening OP-CORE-S-2.",
+    "Added Opening OP-CORE-S-3.",
+    "Added Dimension D-WIDTH-TOTAL.",
+    "Added Dimension D-LENGTH-TOTAL.",
+    "Added Dimension D-X-BAY-1.",
+    "Added Dimension D-X-BAY-2.",
+    "Added Dimension D-X-BAY-3.",
+    "Added Dimension D-Y-BAY-1.",
+    "Added Dimension D-Y-BAY-2.",
+    "Added Dimension D-Y-BAY-3.",
+    "Added SectionMarker SEC-A.",
+    "Added SectionMarker SEC-B.",
+    "Added DrawingView V-FOUNDATION.",
+    "Added DrawingView V-FLOOR-1.",
+    "Added DrawingView V-FLOOR-2.",
+    "Added DrawingView V-ROOF.",
+    "Added DrawingView V-SECTION-A.",
+    "Added DrawingView V-SECTION-B.",
+    "Added DrawingView V-FOOTING-DETAIL.",
+    "Added DrawingView V-COLUMN-DETAIL.",
+    "Added DrawingView V-ROOF-DETAIL.",
+    "Added DrawingView V-WALL-DETAIL.",
+    "Added DrawingView V-BBS.",
+    "Added DetailCallout DET-FOOTING-PLAN-SECTION.",
+    "Added DetailCallout DET-COLUMN-STARTER.",
+    "Added DetailCallout DET-ROOF-SLAB.",
+    "Added DetailCallout DET-CORE-WALL.",
+    "Added DetailCallout DET-WALL-OPENING.",
+    "Added ScheduleDefinition SCH-BBS.",
+    "Added ScheduleDefinition SCH-FOOTING.",
+    "Added ScheduleDefinition SCH-STRIP-FOOTING.",
+    "Added ScheduleDefinition SCH-COLUMN.",
+    "Added ScheduleDefinition SCH-BEAM.",
+    "Added ScheduleDefinition SCH-WALL.",
+    "Added ScheduleDefinition SCH-OPENING.",
+    "Added ScheduleDefinition SCH-MATERIAL.",
+    "Added SheetDefinition SHT-S-001.",
+    "Added SheetDefinition SHT-S-002.",
+    "Updated Level L-FOUNDATION.",
+    "Updated Level L-GROUND.",
+    "Updated Footing F1.",
+    "Updated Column C1.",
+    "Updated Footing F2.",
+    "Updated Column C2.",
+    "Updated Footing F3.",
+    "Updated Column C3.",
+    "Updated Footing F4.",
+    "Updated Column C4.",
+    "Updated Footing F5.",
+    "Updated Column C5.",
+    "Updated Footing F6.",
+    "Updated Column C6.",
+    "Updated Footing F7.",
+    "Updated Column C7.",
+    "Updated Footing F8.",
+    "Updated Column C8.",
+    "Updated Footing F9.",
+    "Updated Column C9.",
+    "Updated Footing F10.",
+    "Updated Column C10.",
+    "Updated Footing F11.",
+    "Updated Column C11.",
+    "Updated Footing F12.",
+    "Updated Column C12.",
+    "Updated Footing F13.",
+    "Updated Column C13.",
+    "Updated Footing F14.",
+    "Updated Column C14.",
+    "Updated Footing F15.",
+    "Updated Column C15.",
+    "Updated Footing F16.",
+    "Updated Column C16.",
+    "Updated Beam B-L1-Y1-X1.",
+    "Updated Beam B-L1-Y1-X2.",
+    "Updated Beam B-L1-Y1-X3.",
+    "Updated Beam B-L1-Y2-X1.",
+    "Updated Beam B-L1-Y2-X2.",
+    "Updated Beam B-L1-Y2-X3.",
+    "Updated Beam B-L1-Y3-X1.",
+    "Updated Beam B-L1-Y3-X2.",
+    "Updated Beam B-L1-Y3-X3.",
+    "Updated Beam B-L1-Y4-X1.",
+    "Updated Beam B-L1-Y4-X2.",
+    "Updated Beam B-L1-Y4-X3.",
+    "Updated Beam B-L1-X1-Y1.",
+    "Updated Beam B-L1-X1-Y2.",
+    "Updated Beam B-L1-X1-Y3.",
+    "Updated Beam B-L1-X2-Y1.",
+    "Updated Beam B-L1-X2-Y2.",
+    "Updated Beam B-L1-X2-Y3.",
+    "Updated Beam B-L1-X3-Y1.",
+    "Updated Beam B-L1-X3-Y2.",
+    "Updated Beam B-L1-X3-Y3.",
+    "Updated Beam B-L1-X4-Y1.",
+    "Updated Beam B-L1-X4-Y2.",
+    "Updated Beam B-L1-X4-Y3.",
+    "Updated Slab S-L1.",
+    "Updated Beam B-L2-Y1-X1.",
+    "Updated Beam B-L2-Y1-X2.",
+    "Updated Beam B-L2-Y1-X3.",
+    "Updated Beam B-L2-Y2-X1.",
+    "Updated Beam B-L2-Y2-X2.",
+    "Updated Beam B-L2-Y2-X3.",
+    "Updated Beam B-L2-Y3-X1.",
+    "Updated Beam B-L2-Y3-X2.",
+    "Updated Beam B-L2-Y3-X3.",
+    "Updated Beam B-L2-Y4-X1.",
+    "Updated Beam B-L2-Y4-X2.",
+    "Updated Beam B-L2-Y4-X3.",
+    "Updated Beam B-L2-X1-Y1.",
+    "Updated Beam B-L2-X1-Y2.",
+    "Updated Beam B-L2-X1-Y3.",
+    "Updated Beam B-L2-X2-Y1.",
+    "Updated Beam B-L2-X2-Y2.",
+    "Updated Beam B-L2-X2-Y3.",
+    "Updated Beam B-L2-X3-Y1.",
+    "Updated Beam B-L2-X3-Y2.",
+    "Updated Beam B-L2-X3-Y3.",
+    "Updated Beam B-L2-X4-Y1.",
+    "Updated Beam B-L2-X4-Y2.",
+    "Updated Beam B-L2-X4-Y3.",
+    "Updated Slab S-L2.",
+    "Updated Beam B-L3-Y1-X1.",
+    "Updated Beam B-L3-Y1-X2.",
+    "Updated Beam B-L3-Y1-X3.",
+    "Updated Beam B-L3-Y2-X1.",
+    "Updated Beam B-L3-Y2-X2.",
+    "Updated Beam B-L3-Y2-X3.",
+    "Updated Beam B-L3-Y3-X1.",
+    "Updated Beam B-L3-Y3-X2.",
+    "Updated Beam B-L3-Y3-X3.",
+    "Updated Beam B-L3-Y4-X1.",
+    "Updated Beam B-L3-Y4-X2.",
+    "Updated Beam B-L3-Y4-X3.",
+    "Updated Beam B-L3-X1-Y1.",
+    "Updated Beam B-L3-X1-Y2.",
+    "Updated Beam B-L3-X1-Y3.",
+    "Updated Beam B-L3-X2-Y1.",
+    "Updated Beam B-L3-X2-Y2.",
+    "Updated Beam B-L3-X2-Y3.",
+    "Updated Beam B-L3-X3-Y1.",
+    "Updated Beam B-L3-X3-Y2.",
+    "Updated Beam B-L3-X3-Y3.",
+    "Updated Beam B-L3-X4-Y1.",
+    "Updated Beam B-L3-X4-Y2.",
+    "Updated Beam B-L3-X4-Y3.",
+    "Updated Slab S-ROOF.",
+    "Updated Wall CORE-W-N.",
+    "Updated StripFooting SF-CORE-W-N.",
+    "Updated Wall CORE-W-E.",
+    "Updated StripFooting SF-CORE-W-E.",
+    "Updated Wall CORE-W-S.",
+    "Updated StripFooting SF-CORE-W-S.",
+    "Updated Wall CORE-W-W.",
+    "Updated StripFooting SF-CORE-W-W.",
+    "Updated Opening OP-CORE-S-1.",
+    "Updated Opening OP-CORE-S-2.",
+    "Updated Opening OP-CORE-S-3.",
+    "Updated Dimension D-WIDTH-TOTAL.",
+    "Updated Dimension D-LENGTH-TOTAL.",
+    "Updated Dimension D-X-BAY-1.",
+    "Updated Dimension D-X-BAY-2.",
+    "Updated Dimension D-X-BAY-3.",
+    "Updated Dimension D-Y-BAY-1.",
+    "Updated Dimension D-Y-BAY-2.",
+    "Updated Dimension D-Y-BAY-3.",
+    "Updated SectionMarker SEC-A.",
+    "Updated SectionMarker SEC-B.",
+    "Updated DrawingView V-FOUNDATION.",
+    "Updated DrawingView V-FLOOR-1.",
+    "Updated DrawingView V-FLOOR-2.",
+    "Updated DrawingView V-ROOF.",
+    "Updated DrawingView V-SECTION-A.",
+    "Updated DrawingView V-SECTION-B.",
+    "Updated DrawingView V-FOOTING-DETAIL.",
+    "Updated DrawingView V-COLUMN-DETAIL.",
+    "Updated DrawingView V-ROOF-DETAIL.",
+    "Updated DrawingView V-WALL-DETAIL.",
+    "Updated DrawingView V-BBS.",
+    "Updated DetailCallout DET-FOOTING-PLAN-SECTION.",
+    "Updated DetailCallout DET-COLUMN-STARTER.",
+    "Updated DetailCallout DET-ROOF-SLAB.",
+    "Updated DetailCallout DET-CORE-WALL.",
+    "Updated DetailCallout DET-WALL-OPENING.",
+    "Updated ScheduleDefinition SCH-BBS.",
+    "Updated ScheduleDefinition SCH-FOOTING.",
+    "Updated ScheduleDefinition SCH-STRIP-FOOTING.",
+    "Updated ScheduleDefinition SCH-COLUMN.",
+    "Updated ScheduleDefinition SCH-BEAM.",
+    "Updated ScheduleDefinition SCH-WALL.",
+    "Updated ScheduleDefinition SCH-OPENING.",
+    "Updated ScheduleDefinition SCH-MATERIAL.",
+    "Updated SheetDefinition SHT-S-001.",
+    "Updated SheetDefinition SHT-S-002."
+  ]
+}

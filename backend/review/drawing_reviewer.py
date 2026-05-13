@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 import math
 import os
+import struct
+import zlib
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
@@ -63,6 +65,37 @@ REQUIRED_TEXT = {
     "BEAM SCHEDULE",
     "MATERIAL TAKEOFF",
     "REINFORCEMENT LEGEND",
+}
+
+STEEL_REQUIRED_LAYERS = {
+    "SAI-A-DIMS",
+    "SAI-A-TEXT",
+    "SAI-A-TITLE",
+    "SAI-S-STEEL",
+    "SAI-S-BRACE",
+    "SAI-SCHEDULE",
+}
+
+STEEL_REQUIRED_TEXT = {
+    "STEEL BRACING COMMENT RESOLUTION",
+    "RESPONSE TO RED-PEN COMMENT",
+    "CONNECTION NOTES",
+    "STEEL MEMBER SCHEDULE",
+}
+
+PIPE_SUPPORT_REQUIRED_TEXT = {
+    "FIRE-FIGHTING PIPE SUPPORT COORDINATION",
+    "PIPE SUPPORT",
+    "STEEL MEMBER SCHEDULE",
+    "CONNECTION NOTES",
+}
+
+PIPE_SUPPORT_REQUIRED_LAYERS = {
+    "SAI-A-DIMS",
+    "SAI-A-TEXT",
+    "SAI-A-TITLE",
+    "SAI-S-STEEL",
+    "SAI-SCHEDULE",
 }
 
 
@@ -130,14 +163,25 @@ def review_dxf(dxf_path: Path, preview_path: Path | None = None) -> DrawingRevie
         "max_y": 0.0 if math.isinf(max_y) else max_y,
     }
 
-    score = _check_minimums(entity_counts, layer_count, issues, score)
-    missing_layers = sorted(REQUIRED_LAYERS - layers)
+    all_text = "\n".join(text_values)
+    pipe_support_package = "FIRE-FIGHTING PIPE SUPPORT COORDINATION" in all_text
+    steel_package = pipe_support_package or "STEEL BRACING COMMENT RESOLUTION" in all_text or "SAI-S-STEEL" in layers
+
+    score = _check_minimums(entity_counts, layer_count, issues, score, steel_package=steel_package)
+    if pipe_support_package:
+        required_layers = PIPE_SUPPORT_REQUIRED_LAYERS
+    else:
+        required_layers = STEEL_REQUIRED_LAYERS if steel_package else REQUIRED_LAYERS
+    missing_layers = sorted(required_layers - layers)
     if missing_layers:
         score -= min(20, len(missing_layers) * 3)
         issues.append(DrawingReviewIssue("LAYERS_MISSING", "error", f"Missing required drafting layers: {', '.join(missing_layers)}."))
 
-    all_text = "\n".join(text_values)
-    missing_text = sorted(required for required in REQUIRED_TEXT if required not in all_text)
+    if pipe_support_package:
+        required_text = PIPE_SUPPORT_REQUIRED_TEXT
+    else:
+        required_text = STEEL_REQUIRED_TEXT if steel_package else REQUIRED_TEXT
+    missing_text = sorted(required for required in required_text if required not in all_text)
     if missing_text:
         score -= min(24, len(missing_text) * 4)
         issues.append(DrawingReviewIssue("DRAWING_LABELS_MISSING", "error", f"Missing required drawing labels: {', '.join(missing_text)}."))
@@ -176,22 +220,31 @@ def review_dxf(dxf_path: Path, preview_path: Path | None = None) -> DrawingRevie
     )
 
 
-def _check_minimums(entity_counts: dict[str, int], layer_count: int, issues: list[DrawingReviewIssue], score: int) -> int:
-    minimums = {
-        "TEXT": 400,
-        "LINE": 400,
-        "LWPOLYLINE": 95,
-        "HATCH": 30,
-        "CIRCLE": 24,
-    }
+def _check_minimums(entity_counts: dict[str, int], layer_count: int, issues: list[DrawingReviewIssue], score: int, steel_package: bool = False) -> int:
+    if steel_package:
+        minimums = {
+            "TEXT": 120,
+            "LINE": 100,
+            "LWPOLYLINE": 25,
+        }
+        layer_minimum = 8
+    else:
+        minimums = {
+            "TEXT": 400,
+            "LINE": 400,
+            "LWPOLYLINE": 95,
+            "HATCH": 30,
+            "CIRCLE": 24,
+        }
+        layer_minimum = 16
     for dxftype, minimum in minimums.items():
         actual = entity_counts.get(dxftype, 0)
         if actual < minimum:
             score -= 10
             issues.append(DrawingReviewIssue("ENTITY_DENSITY_LOW", "error", f"Expected at least {minimum} {dxftype} entities, found {actual}."))
-    if layer_count < 16:
+    if layer_count < layer_minimum:
         score -= 10
-        issues.append(DrawingReviewIssue("LAYER_DENSITY_LOW", "error", f"Expected at least 16 active layers, found {layer_count}."))
+        issues.append(DrawingReviewIssue("LAYER_DENSITY_LOW", "error", f"Expected at least {layer_minimum} active layers, found {layer_count}."))
     return score
 
 
@@ -214,7 +267,152 @@ def _render_preview(doc, preview_path: Path) -> DrawingReviewIssue | None:
         ezplt.qsave(doc.modelspace(), preview_path, bg="#1f2933")
         return None
     except Exception as exc:
-        return DrawingReviewIssue("PREVIEW_RENDER_FAILED", "warning", f"Could not render DXF preview: {exc}")
+        try:
+            _render_lightweight_preview(doc, preview_path)
+            return DrawingReviewIssue("PREVIEW_RENDER_FALLBACK", "warning", f"Used lightweight preview renderer because full CAD preview failed: {exc}")
+        except Exception as fallback_exc:
+            return DrawingReviewIssue("PREVIEW_RENDER_FAILED", "warning", f"Could not render DXF preview: {exc}; fallback failed: {fallback_exc}")
+
+
+def _render_lightweight_preview(doc, preview_path: Path, width: int = 1400, height: int = 900) -> None:
+    entities = list(doc.modelspace())
+    min_x, min_y, max_x, max_y = _preview_extents(entities)
+    if max_x <= min_x or max_y <= min_y:
+        raise ValueError("no drawable extents")
+
+    bg = (31, 41, 51)
+    pixels = [bytearray(bg * width) for _ in range(height)]
+    margin = 40
+    scale = min((width - 2 * margin) / max(max_x - min_x, 1), (height - 2 * margin) / max(max_y - min_y, 1))
+
+    def transform(x: float, y: float) -> tuple[int, int]:
+        px = int(margin + (x - min_x) * scale)
+        py = int(height - margin - (y - min_y) * scale)
+        return px, py
+
+    for entity in entities:
+        color = _layer_color(entity.dxf.layer)
+        dxftype = entity.dxftype()
+        try:
+            if dxftype == "LINE":
+                _draw_line(pixels, *transform(float(entity.dxf.start.x), float(entity.dxf.start.y)), *transform(float(entity.dxf.end.x), float(entity.dxf.end.y)), color)
+            elif dxftype == "LWPOLYLINE":
+                points = [(float(point[0]), float(point[1])) for point in entity.get_points()]
+                _draw_polyline_preview(pixels, points, transform, color, bool(entity.closed))
+            elif dxftype == "POLYLINE":
+                points = [(float(vertex.dxf.location.x), float(vertex.dxf.location.y)) for vertex in entity.vertices]
+                _draw_polyline_preview(pixels, points, transform, color, bool(entity.is_closed))
+            elif dxftype == "CIRCLE":
+                center = entity.dxf.center
+                radius = float(entity.dxf.radius)
+                previous: tuple[float, float] | None = None
+                for step in range(37):
+                    angle = math.tau * step / 36
+                    current = (float(center.x) + math.cos(angle) * radius, float(center.y) + math.sin(angle) * radius)
+                    if previous:
+                        _draw_line(pixels, *transform(*previous), *transform(*current), color)
+                    previous = current
+            elif dxftype in {"TEXT", "MTEXT"}:
+                insert = entity.dxf.insert
+                x, y = transform(float(insert.x), float(insert.y))
+                _draw_line(pixels, x, y, x + 14, y, color)
+        except Exception:
+            continue
+
+    preview_path.parent.mkdir(parents=True, exist_ok=True)
+    _write_png(preview_path, width, height, pixels)
+
+
+def _preview_extents(entities) -> tuple[float, float, float, float]:
+    try:
+        from ezdxf import bbox
+
+        ext = bbox.extents(entities)
+        if ext.has_data:
+            return float(ext.extmin.x), float(ext.extmin.y), float(ext.extmax.x), float(ext.extmax.y)
+    except Exception:
+        pass
+    xs: list[float] = []
+    ys: list[float] = []
+    for entity in entities:
+        try:
+            if entity.dxftype() == "LINE":
+                xs.extend([float(entity.dxf.start.x), float(entity.dxf.end.x)])
+                ys.extend([float(entity.dxf.start.y), float(entity.dxf.end.y)])
+            elif entity.dxftype() == "LWPOLYLINE":
+                for point in entity.get_points():
+                    xs.append(float(point[0]))
+                    ys.append(float(point[1]))
+            elif entity.dxftype() == "CIRCLE":
+                center = entity.dxf.center
+                radius = float(entity.dxf.radius)
+                xs.extend([float(center.x) - radius, float(center.x) + radius])
+                ys.extend([float(center.y) - radius, float(center.y) + radius])
+        except Exception:
+            continue
+    if not xs or not ys:
+        return 0.0, 0.0, 1.0, 1.0
+    return min(xs), min(ys), max(xs), max(ys)
+
+
+def _layer_color(layer: str) -> tuple[int, int, int]:
+    palette = [
+        (238, 242, 255),
+        (125, 211, 252),
+        (251, 191, 36),
+        (248, 113, 113),
+        (134, 239, 172),
+        (216, 180, 254),
+    ]
+    return palette[sum(ord(char) for char in layer) % len(palette)]
+
+
+def _draw_polyline_preview(pixels: list[bytearray], points: list[tuple[float, float]], transform, color: tuple[int, int, int], closed: bool) -> None:
+    if len(points) < 2:
+        return
+    transformed = [transform(x, y) for x, y in points]
+    for start, end in zip(transformed, transformed[1:]):
+        _draw_line(pixels, *start, *end, color)
+    if closed:
+        _draw_line(pixels, *transformed[-1], *transformed[0], color)
+
+
+def _draw_line(pixels: list[bytearray], x0: int, y0: int, x1: int, y1: int, color: tuple[int, int, int]) -> None:
+    width = len(pixels[0]) // 3
+    height = len(pixels)
+    dx = abs(x1 - x0)
+    dy = -abs(y1 - y0)
+    sx = 1 if x0 < x1 else -1
+    sy = 1 if y0 < y1 else -1
+    err = dx + dy
+    x, y = x0, y0
+    while True:
+        for ox, oy in ((0, 0), (1, 0), (0, 1)):
+            px, py = x + ox, y + oy
+            if 0 <= px < width and 0 <= py < height:
+                offset = px * 3
+                pixels[py][offset : offset + 3] = bytes(color)
+        if x == x1 and y == y1:
+            break
+        e2 = 2 * err
+        if e2 >= dy:
+            err += dy
+            x += sx
+        if e2 <= dx:
+            err += dx
+            y += sy
+
+
+def _write_png(path: Path, width: int, height: int, pixels: list[bytearray]) -> None:
+    def chunk(kind: bytes, data: bytes) -> bytes:
+        return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xFFFFFFFF)
+
+    raw = b"".join(b"\x00" + bytes(row) for row in pixels)
+    png = b"\x89PNG\r\n\x1a\n"
+    png += chunk(b"IHDR", struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0))
+    png += chunk(b"IDAT", zlib.compress(raw, level=6))
+    png += chunk(b"IEND", b"")
+    path.write_bytes(png)
 
 
 def _image_metrics(path: Path) -> dict[str, Any]:

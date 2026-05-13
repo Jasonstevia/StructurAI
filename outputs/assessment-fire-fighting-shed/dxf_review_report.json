@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "score": 95,
+  "issues": [
+    {
+      "code": "PREVIEW_RENDER_FALLBACK",
+      "severity": "warning",
+      "message": "Used lightweight preview renderer because full CAD preview failed: No module named 'matplotlib'"
+    }
+  ],
+  "entity_counts": {
+    "TEXT": 342,
+    "LINE": 160,
+    "CIRCLE": 38,
+    "HATCH": 4,
+    "LWPOLYLINE": 40
+  },
+  "layer_count": 13,
+  "extents": {
+    "min_x": -700.0,
+    "min_y": -35650.0,
+    "max_x": 168188.8676671214,
+    "max_y": 6360.0
+  },
+  "image_metrics": {},
+  "preview_path": "outputs\\assessment-fire-fighting-shed\\structurai_preview.png"
+}

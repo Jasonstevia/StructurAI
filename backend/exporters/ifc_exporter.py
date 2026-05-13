@@ -5,7 +5,7 @@ import math
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from backend.core.structura_model import Beam, Column, Footing, Slab, StructuraProject
+from backend.core.structura_model import Beam, Column, Footing, Opening, Slab, SteelMember, StripFooting, StructuraProject, Wall
 
 
 @dataclass
@@ -58,12 +58,22 @@ def _ifc4_geometry(project: StructuraProject) -> str:
     products: list[str] = []
     for footing in project.footings:
         products.append(_footing_entity(b, footing, owner, body_context, storey_placement))
+    for strip in project.strip_footings:
+        products.append(_strip_footing_entity(b, strip, owner, body_context, storey_placement))
     for column in project.columns:
         products.append(_column_entity(b, column, owner, body_context, storey_placement))
     for beam in project.beams:
         products.append(_beam_entity(b, beam, owner, body_context, storey_placement))
     for slab in project.slabs:
         products.append(_slab_entity(b, slab, owner, body_context, storey_placement))
+    for wall in project.walls:
+        products.append(_wall_entity(b, wall, owner, body_context, storey_placement))
+    for opening in project.openings:
+        opening_ref = _opening_entity(b, opening, project.walls, owner, body_context, storey_placement)
+        if opening_ref:
+            products.append(opening_ref)
+    for member in project.steel_members:
+        products.append(_steel_member_entity(b, member, owner, body_context, storey_placement))
     if products:
         b.add(f"IFCRELCONTAINEDINSPATIALSTRUCTURE('{_guid(project.project_id + '-contains')}',{owner},$,$,({','.join(products)}),{storey})")
 
@@ -88,6 +98,20 @@ def _footing_entity(b: StepBuilder, footing: Footing, owner: str, context: str, 
     shape = _extruded_box(b, context, footing.width_mm, footing.length_mm, footing.depth_mm)
     product = b.add(f"IFCFOOTING('{_guid(footing.id)}',{owner},{_s(footing.id)},$,$,{placement},{shape},{_s(footing.id)},.PAD_FOOTING.)")
     _property_set(b, owner, product, footing.id, {"ConcreteGrade": footing.concrete_grade, "Depth_mm": footing.depth_mm})
+    return product
+
+
+def _strip_footing_entity(b: StepBuilder, footing: StripFooting, owner: str, context: str, parent_placement: str) -> str:
+    dx = footing.end.x - footing.start.x
+    dy = footing.end.y - footing.start.y
+    span = math.hypot(dx, dy)
+    angle = math.atan2(dy, dx)
+    mid_x = (footing.start.x + footing.end.x) / 2
+    mid_y = (footing.start.y + footing.end.y) / 2
+    placement = _placement(b, parent_placement, mid_x, mid_y, footing.bottom_elevation_mm, angle)
+    shape = _extruded_box(b, context, span, footing.width_mm, footing.depth_mm)
+    product = b.add(f"IFCFOOTING('{_guid(footing.id)}',{owner},{_s(footing.id)},$,$,{placement},{shape},{_s(footing.id)},.STRIP_FOOTING.)")
+    _property_set(b, owner, product, footing.id, {"ConcreteGrade": footing.concrete_grade, "Depth_mm": footing.depth_mm, "Width_mm": footing.width_mm})
     return product
 
 
@@ -124,6 +148,92 @@ def _slab_entity(b: StepBuilder, slab: Slab, owner: str, context: str, parent_pl
     product = b.add(f"IFCSLAB('{_guid(slab.id)}',{owner},{_s(slab.id)},$,$,{placement},{shape},{_s(slab.id)},.ROOF.)")
     _property_set(b, owner, product, slab.id, {"ConcreteGrade": slab.concrete_grade, "Thickness_mm": slab.thickness_mm})
     return product
+
+
+def _wall_entity(b: StepBuilder, wall: Wall, owner: str, context: str, parent_placement: str) -> str:
+    dx = wall.end.x - wall.start.x
+    dy = wall.end.y - wall.start.y
+    span = math.hypot(dx, dy)
+    angle = math.atan2(dy, dx)
+    mid_x = (wall.start.x + wall.end.x) / 2
+    mid_y = (wall.start.y + wall.end.y) / 2
+    height = wall.top_elevation_mm - wall.base_elevation_mm
+    placement = _placement(b, parent_placement, mid_x, mid_y, wall.base_elevation_mm, angle)
+    shape = _extruded_box(b, context, span, wall.thickness_mm, height)
+    product = b.add(f"IFCWALL('{_guid(wall.id)}',{owner},{_s(wall.id)},$,$,{placement},{shape},{_s(wall.id)},.SHEAR.)")
+    _property_set(
+        b,
+        owner,
+        product,
+        wall.id,
+        {"ConcreteGrade": wall.concrete_grade, "Height_mm": height, "Thickness_mm": wall.thickness_mm, "WallType": wall.wall_type},
+    )
+    return product
+
+
+def _opening_entity(b: StepBuilder, opening: Opening, walls: list[Wall], owner: str, context: str, parent_placement: str) -> str | None:
+    host = next((wall for wall in walls if wall.id == opening.host_id), None)
+    if not host:
+        return None
+    angle = math.atan2(host.end.y - host.start.y, host.end.x - host.start.x)
+    placement = _placement(b, parent_placement, opening.center.x, opening.center.y, opening.sill_elevation_mm, angle)
+    shape = _extruded_box(b, context, opening.width_mm, host.thickness_mm + 50, opening.height_mm)
+    product = b.add(f"IFCOPENINGELEMENT('{_guid(opening.id)}',{owner},{_s(opening.id)},$,$,{placement},{shape},{_s(opening.id)},.OPENING.)")
+    _property_set(
+        b,
+        owner,
+        product,
+        opening.id,
+        {"HostId": opening.host_id, "Width_mm": opening.width_mm, "Height_mm": opening.height_mm, "Sill_mm": opening.sill_elevation_mm},
+    )
+    return product
+
+
+def _steel_member_entity(b: StepBuilder, member: SteelMember, owner: str, context: str, parent_placement: str) -> str:
+    dx = member.end.x - member.start.x
+    dy = member.end.y - member.start.y
+    dz = member.end.z - member.start.z
+    length = math.sqrt(dx * dx + dy * dy + dz * dz)
+    angle = math.atan2(dy, dx)
+    mid_x = (member.start.x + member.end.x) / 2
+    mid_y = (member.start.y + member.end.y) / 2
+    mid_z = (member.start.z + member.end.z) / 2
+    nominal_size = _section_nominal_size(member.section)
+    placement = _placement(b, parent_placement, mid_x, mid_y, mid_z - nominal_size / 2, angle)
+    shape = _extruded_box(b, context, max(length, nominal_size), nominal_size, nominal_size)
+    if member.member_type == "beam":
+        ifc_class = "IFCBEAM"
+    elif member.member_type == "column":
+        ifc_class = "IFCCOLUMN"
+    else:
+        ifc_class = "IFCMEMBER"
+    product = b.add(f"{ifc_class}('{_guid(member.id)}',{owner},{_s(member.id)},$,$,{placement},{shape},{_s(member.id)},$)")
+    _property_set(
+        b,
+        owner,
+        product,
+        member.id,
+        {
+            "MemberType": member.member_type,
+            "Section": member.section,
+            "MaterialGrade": member.material_grade,
+            "Length_mm": length,
+            "ConnectionNote": member.connection_note,
+        },
+    )
+    return product
+
+
+def _section_nominal_size(section: str) -> float:
+    digits = ""
+    for char in section:
+        if char.isdigit():
+            digits += char
+        elif digits:
+            break
+    if digits:
+        return max(40.0, min(float(digits), 300.0))
+    return 80.0
 
 
 def _placement(b: StepBuilder, parent: str | None, x: float, y: float, z: float, angle_rad: float = 0.0) -> str:

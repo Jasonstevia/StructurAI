@@ -1,0 +1,722 @@
+{
+  "project_id": "structurai-project",
+  "title": "Steel Bracing Comment Resolution",
+  "units": "mm",
+  "description": "AI-generated structural steel comment-resolution package for unsupported conveyor/platform members.",
+  "levels": [
+    {
+      "id": "L-FLOOR",
+      "elevation_mm": 0.0,
+      "name": "Finished Floor"
+    },
+    {
+      "id": "L-STEEL",
+      "elevation_mm": 4300.0,
+      "name": "Steel Support Level"
+    }
+  ],
+  "grid_lines": [
+    {
+      "id": "GX-ST-1",
+      "axis": "x",
+      "offset_mm": 0.0,
+      "label": "1"
+    },
+    {
+      "id": "GX-ST-2",
+      "axis": "x",
+      "offset_mm": 4000.0,
+      "label": "2"
+    },
+    {
+      "id": "GX-ST-3",
+      "axis": "x",
+      "offset_mm": 8000.0,
+      "label": "3"
+    },
+    {
+      "id": "GX-ST-4",
+      "axis": "x",
+      "offset_mm": 12000.0,
+      "label": "4"
+    },
+    {
+      "id": "GX-ST-5",
+      "axis": "x",
+      "offset_mm": 15500.0,
+      "label": "5"
+    },
+    {
+      "id": "GX-ST-6",
+      "axis": "x",
+      "offset_mm": 18500.0,
+      "label": "6"
+    }
+  ],
+  "footings": [],
+  "strip_footings": [],
+  "columns": [],
+  "beams": [],
+  "slabs": [],
+  "walls": [],
+  "openings": [],
+  "steel_members": [
+    {
+      "id": "ST-C1",
+      "member_type": "column",
+      "start": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Base plate and anchor bolts by engineer."
+    },
+    {
+      "id": "ST-C2",
+      "member_type": "column",
+      "start": {
+        "x": 4000.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 4000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Base plate and anchor bolts by engineer."
+    },
+    {
+      "id": "ST-C3",
+      "member_type": "column",
+      "start": {
+        "x": 8000.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 8000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Base plate and anchor bolts by engineer."
+    },
+    {
+      "id": "ST-C4",
+      "member_type": "column",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Base plate and anchor bolts by engineer."
+    },
+    {
+      "id": "ST-C5",
+      "member_type": "column",
+      "start": {
+        "x": 15500.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 15500.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Base plate and anchor bolts by engineer."
+    },
+    {
+      "id": "ST-C6",
+      "member_type": "column",
+      "start": {
+        "x": 18500.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "end": {
+        "x": 18500.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Base plate and anchor bolts by engineer."
+    },
+    {
+      "id": "ST-B1",
+      "member_type": "beam",
+      "start": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 4000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Weld/bolt to column cap plate."
+    },
+    {
+      "id": "ST-B2",
+      "member_type": "beam",
+      "start": {
+        "x": 4000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 8000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Weld/bolt to column cap plate."
+    },
+    {
+      "id": "ST-B3",
+      "member_type": "beam",
+      "start": {
+        "x": 8000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 12000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Weld/bolt to column cap plate."
+    },
+    {
+      "id": "ST-B4",
+      "member_type": "beam",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 15500.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Weld/bolt to column cap plate."
+    },
+    {
+      "id": "ST-B5",
+      "member_type": "beam",
+      "start": {
+        "x": 15500.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 18500.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "SHS 100x4",
+      "material_grade": "S275",
+      "connection_note": "Weld/bolt to column cap plate."
+    },
+    {
+      "id": "ST-BR1A",
+      "member_type": "brace",
+      "start": {
+        "x": 4000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 0.0,
+        "z": 3100.0
+      },
+      "section": "L50x6",
+      "material_grade": "S275",
+      "connection_note": "Add gusset plate both ends."
+    },
+    {
+      "id": "ST-BR1B",
+      "member_type": "brace",
+      "start": {
+        "x": 8000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 6000.0,
+        "y": 0.0,
+        "z": 3100.0
+      },
+      "section": "L50x6",
+      "material_grade": "S275",
+      "connection_note": "Add gusset plate both ends."
+    },
+    {
+      "id": "ST-BR2A",
+      "member_type": "brace",
+      "start": {
+        "x": 8000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 10000.0,
+        "y": 0.0,
+        "z": 3100.0
+      },
+      "section": "L50x6",
+      "material_grade": "S275",
+      "connection_note": "Add gusset plate both ends."
+    },
+    {
+      "id": "ST-BR2B",
+      "member_type": "brace",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 10000.0,
+        "y": 0.0,
+        "z": 3100.0
+      },
+      "section": "L50x6",
+      "material_grade": "S275",
+      "connection_note": "Add gusset plate both ends."
+    },
+    {
+      "id": "ST-BR3A",
+      "member_type": "brace",
+      "start": {
+        "x": 12000.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 13750.0,
+        "y": 0.0,
+        "z": 3100.0
+      },
+      "section": "L50x6",
+      "material_grade": "S275",
+      "connection_note": "Add gusset plate both ends."
+    },
+    {
+      "id": "ST-BR3B",
+      "member_type": "brace",
+      "start": {
+        "x": 15500.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 13750.0,
+        "y": 0.0,
+        "z": 3100.0
+      },
+      "section": "L50x6",
+      "material_grade": "S275",
+      "connection_note": "Add gusset plate both ends."
+    },
+    {
+      "id": "ST-UNSUPPORTED-REF",
+      "member_type": "platform",
+      "start": {
+        "x": 6500.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "end": {
+        "x": 13750.0,
+        "y": 0.0,
+        "z": 4300.0
+      },
+      "section": "Existing conveyor/platform edge",
+      "material_grade": "S275",
+      "connection_note": "Reference member flagged by comment."
+    }
+  ],
+  "drawing_package": {
+    "views": [
+      {
+        "id": "V-FOUNDATION",
+        "view_type": "foundation_plan",
+        "title": "Foundation Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-ROOF",
+        "view_type": "roof_framing_plan",
+        "title": "Roof Framing Plan",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-SECTION-A",
+        "view_type": "section",
+        "title": "Section A-A",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-SECTION-B",
+        "view_type": "section",
+        "title": "Section B-B",
+        "scale": "1:50",
+        "notes": []
+      },
+      {
+        "id": "V-FOOTING-DETAIL",
+        "view_type": "detail",
+        "title": "Isolated Footing Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-COLUMN-DETAIL",
+        "view_type": "detail",
+        "title": "Column Reinforcement Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-ROOF-DETAIL",
+        "view_type": "detail",
+        "title": "Roof Slab Reinforcement Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-WALL-DETAIL",
+        "view_type": "detail",
+        "title": "Core Wall and Opening Details",
+        "scale": "1:25",
+        "notes": []
+      },
+      {
+        "id": "V-BBS",
+        "view_type": "schedule",
+        "title": "Bar Bending Schedule",
+        "scale": "1:50",
+        "notes": []
+      }
+    ],
+    "dimensions": [
+      {
+        "id": "D-STEEL-LENGTH",
+        "start": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "end": {
+          "x": 18500.0,
+          "y": 0.0
+        },
+        "offset_mm": -900.0,
+        "label": "18500"
+      }
+    ],
+    "sections": [
+      {
+        "id": "SEC-STEEL-A",
+        "label": "A-A",
+        "start": {
+          "x": 0.0,
+          "y": -500.0
+        },
+        "end": {
+          "x": 18500.0,
+          "y": -500.0
+        },
+        "target_view_id": null
+      },
+      {
+        "id": "SEC-STEEL-B",
+        "label": "B-B",
+        "start": {
+          "x": 9250.0,
+          "y": -500.0
+        },
+        "end": {
+          "x": 9250.0,
+          "y": 500.0
+        },
+        "target_view_id": null
+      }
+    ],
+    "details": [
+      {
+        "id": "DET-FOOTING-PLAN-SECTION",
+        "detail_type": "isolated_footing",
+        "title": "Typical Isolated Footing Plan and Section",
+        "source_entity_id": null,
+        "scale": "1:25",
+        "parameters": {
+          "show_rebar": true,
+          "show_cover": true,
+          "show_subgrade": true
+        }
+      },
+      {
+        "id": "DET-COLUMN-STARTER",
+        "detail_type": "column_reinforcement",
+        "title": "Typical Column Starter Bars and Ties",
+        "source_entity_id": null,
+        "scale": "1:25",
+        "parameters": {
+          "lap_length_mm": 650,
+          "starter_projection_mm": 600
+        }
+      },
+      {
+        "id": "DET-ROOF-SLAB",
+        "detail_type": "roof_slab_reinforcement",
+        "title": "Typical Roof Slab Reinforcement",
+        "source_entity_id": null,
+        "scale": "1:25",
+        "parameters": {
+          "top_cover_mm": 30,
+          "bottom_cover_mm": 30
+        }
+      }
+    ],
+    "schedules": [
+      {
+        "id": "SCH-BBS",
+        "schedule_type": "bar_bending",
+        "title": "Bar Bending Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-FOOTING",
+        "schedule_type": "footing",
+        "title": "Footing Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-COLUMN",
+        "schedule_type": "column",
+        "title": "Column Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-BEAM",
+        "schedule_type": "beam",
+        "title": "Beam Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-STEEL",
+        "schedule_type": "steel_member",
+        "title": "Structural Steel Member Schedule",
+        "source_entity_ids": []
+      },
+      {
+        "id": "SCH-MATERIAL",
+        "schedule_type": "material_takeoff",
+        "title": "Concrete and Rebar Takeoff",
+        "source_entity_ids": []
+      }
+    ],
+    "sheets": [
+      {
+        "id": "SHT-S-001",
+        "number": "S-001",
+        "title": "General Structural Arrangement",
+        "scale": "AS SHOWN",
+        "view_ids": [
+          "V-FOUNDATION",
+          "V-ROOF",
+          "V-SECTION-A",
+          "V-SECTION-B"
+        ]
+      },
+      {
+        "id": "SHT-S-002",
+        "number": "S-002",
+        "title": "Reinforcement Details and Schedules",
+        "scale": "AS SHOWN",
+        "view_ids": [
+          "V-FOOTING-DETAIL",
+          "V-COLUMN-DETAIL",
+          "V-ROOF-DETAIL",
+          "V-WALL-DETAIL",
+          "V-BBS"
+        ]
+      }
+    ],
+    "drafting_standard": {
+      "name": "StructurAI Professional RC",
+      "base_text_height_mm": 150.0,
+      "title_text_height_mm": 260.0,
+      "dimension_text_height_mm": 120.0,
+      "layer_prefix": "SAI",
+      "default_plan_scale": "1:50",
+      "default_detail_scale": "1:25"
+    },
+    "general_notes": [
+      "All dimensions are in millimeters unless noted otherwise.",
+      "Concrete grade C30 assumed for MVP drafting package; engineer to verify.",
+      "Reinforcement cover: 75mm for footings, 40mm for columns/beams/slabs unless noted.",
+      "This package is generated for engineer review and coordination, not final sealed design."
+    ]
+  },
+  "extracted_context": {
+    "source_path": "C:\\Users\\user\\Downloads\\30A100DMGA21080_EXDE05_RL_MK080_R00-sht9 CPY Comments.pdf",
+    "file_type": "pdf",
+    "layers": {
+      "PDF_PAGE": 1
+    },
+    "lines": [
+      {
+        "page": 1,
+        "width_pt": 1191.0,
+        "height_pt": 842.0,
+        "text": "FL0.0MTR BILL OF MATERIALS TYP. Software: Autocad File Name: 30A100DMGA21080_EXDE05_26.dwg LEGEND REFERENCE DRAWINGS NOTES Superseeded N. Superseeded by N. Plant Unit NA Facility and Sub Facility Name Company Logo and Business Name Company Document ID: Contract N. Project Name Document Title Contractor Document ID: Revision Index Prepared Checked Job N. Contractor Logo and Business Name Approved Approved Eni Congo S.A. Sheet of Sheets Date Validity Status Description CONGO BIOFUL Zerock Construction Congo S.a.r.l Scale Plant Area NA 1st Agri Hub - Industrial Start-Up - General 1:75 Revision number Contractor Contractor Contractor Company 9/26 Sheet Size: A3 This document is property of Eni SA It shall neither be shown to Third Parties not used for purposes other than those for which it has been sent. 30A100DMGA21080 STEEL STRUCTURE FOR PLATFORMS, OVERHEAD CONVEYORS, ELEVATORS, DAY BINS, HOPPERS, OVERFLOW BINS AND INTERMEDIATE PROCESS TANKS DETAILED EQUIPMENT LAYOUT - LINE 1 & 2 30A100DMGA21040 FABRICATION DRAWING OF STRUCTURE FOR COOKER OVERHEAD CONVEYOR (CC6) 30A100DMGA21080 Issue for Comments R. SAAD EX-DE 00 RO. HABIB R. JALBOUT 20/02/2023 N. CAPRETTI Issue for Approval R. SAAD EX-DE 01 RO. HABIB R. JALBOUT 27/06/2023 N. CAPRETTI Issue for FINAL R. SAAD EX-DE 02 RO. HABIB R. JALBOUT 06/07/2023 N. CAPRETTI Issue for Approval R. SAAD EX-DE 03 RO. HABIB R. JALBOUT 02/08/2023 N. CAPRETTI Issue for Approval R. SAAD EX-DE 04 RO. HABIB R. JALBOUT 24/08/2023 N. CAPRETTI Issue for Approval R. SAAD EX-DE 05 RO. HABIB R. JALBOUT 11/09/2023 N. CAPRETTI Red Pen MarkUp N°: _______________ Date: ______________ Sign CTR: _______________ Date: ______________ Sign CPY: _______________ RL_MK080_R00 09/09/2024 Robert Habib Element without support, Add adequate bracing to support the structure"
+      }
+    ],
+    "notes": [
+      "Extracted PDF drawing context from 1 page(s).",
+      "Page 1: detected red-pen structural comment requiring adequate bracing for an unsupported element.",
+      "Page 1: detected bill of materials table.",
+      "Page 1: detected revision/comment workflow metadata."
+    ]
+  },
+  "assumptions": [
+    "Supervisor/red-pen comment requires additional bracing for an unsupported steel member.",
+    "Steel repair geometry inferred from extracted PDF dimensions and visible framing layout."
+  ],
+  "change_log": [
+    "Added Level L-FLOOR.",
+    "Added Level L-STEEL.",
+    "Added GridLine GX-ST-1.",
+    "Added SteelMember ST-C1.",
+    "Added GridLine GX-ST-2.",
+    "Added SteelMember ST-C2.",
+    "Added GridLine GX-ST-3.",
+    "Added SteelMember ST-C3.",
+    "Added GridLine GX-ST-4.",
+    "Added SteelMember ST-C4.",
+    "Added GridLine GX-ST-5.",
+    "Added SteelMember ST-C5.",
+    "Added GridLine GX-ST-6.",
+    "Added SteelMember ST-C6.",
+    "Added SteelMember ST-B1.",
+    "Added SteelMember ST-B2.",
+    "Added SteelMember ST-B3.",
+    "Added SteelMember ST-B4.",
+    "Added SteelMember ST-B5.",
+    "Added SteelMember ST-BR1A.",
+    "Added SteelMember ST-BR1B.",
+    "Added SteelMember ST-BR2A.",
+    "Added SteelMember ST-BR2B.",
+    "Added SteelMember ST-BR3A.",
+    "Added SteelMember ST-BR3B.",
+    "Added SteelMember ST-UNSUPPORTED-REF.",
+    "Added Dimension D-STEEL-LENGTH.",
+    "Added SectionMarker SEC-STEEL-A.",
+    "Added SectionMarker SEC-STEEL-B.",
+    "Added DrawingView V-FOUNDATION.",
+    "Added DrawingView V-ROOF.",
+    "Added DrawingView V-SECTION-A.",
+    "Added DrawingView V-SECTION-B.",
+    "Added DrawingView V-FOOTING-DETAIL.",
+    "Added DrawingView V-COLUMN-DETAIL.",
+    "Added DrawingView V-ROOF-DETAIL.",
+    "Added DrawingView V-WALL-DETAIL.",
+    "Added DrawingView V-BBS.",
+    "Added DetailCallout DET-FOOTING-PLAN-SECTION.",
+    "Added DetailCallout DET-COLUMN-STARTER.",
+    "Added DetailCallout DET-ROOF-SLAB.",
+    "Added ScheduleDefinition SCH-BBS.",
+    "Added ScheduleDefinition SCH-FOOTING.",
+    "Added ScheduleDefinition SCH-COLUMN.",
+    "Added ScheduleDefinition SCH-BEAM.",
+    "Added ScheduleDefinition SCH-STEEL.",
+    "Added ScheduleDefinition SCH-MATERIAL.",
+    "Added SheetDefinition SHT-S-001.",
+    "Added SheetDefinition SHT-S-002.",
+    "Updated Level L-FLOOR.",
+    "Updated Level L-STEEL.",
+    "Updated GridLine GX-ST-1.",
+    "Updated SteelMember ST-C1.",
+    "Updated GridLine GX-ST-2.",
+    "Updated SteelMember ST-C2.",
+    "Updated GridLine GX-ST-3.",
+    "Updated SteelMember ST-C3.",
+    "Updated GridLine GX-ST-4.",
+    "Updated SteelMember ST-C4.",
+    "Updated GridLine GX-ST-5.",
+    "Updated SteelMember ST-C5.",
+    "Updated GridLine GX-ST-6.",
+    "Updated SteelMember ST-C6.",
+    "Updated SteelMember ST-B1.",
+    "Updated SteelMember ST-B2.",
+    "Updated SteelMember ST-B3.",
+    "Updated SteelMember ST-B4.",
+    "Updated SteelMember ST-B5.",
+    "Updated SteelMember ST-BR1A.",
+    "Updated SteelMember ST-BR1B.",
+    "Updated SteelMember ST-BR2A.",
+    "Updated SteelMember ST-BR2B.",
+    "Updated SteelMember ST-BR3A.",
+    "Updated SteelMember ST-BR3B.",
+    "Updated SteelMember ST-UNSUPPORTED-REF.",
+    "Updated Dimension D-STEEL-LENGTH.",
+    "Updated SectionMarker SEC-STEEL-A.",
+    "Updated SectionMarker SEC-STEEL-B.",
+    "Updated DrawingView V-FOUNDATION.",
+    "Updated DrawingView V-ROOF.",
+    "Updated DrawingView V-SECTION-A.",
+    "Updated DrawingView V-SECTION-B.",
+    "Updated DrawingView V-FOOTING-DETAIL.",
+    "Updated DrawingView V-COLUMN-DETAIL.",
+    "Updated DrawingView V-ROOF-DETAIL.",
+    "Updated DrawingView V-WALL-DETAIL.",
+    "Updated DrawingView V-BBS.",
+    "Updated DetailCallout DET-FOOTING-PLAN-SECTION.",
+    "Updated DetailCallout DET-COLUMN-STARTER.",
+    "Updated DetailCallout DET-ROOF-SLAB.",
+    "Updated ScheduleDefinition SCH-BBS.",
+    "Updated ScheduleDefinition SCH-FOOTING.",
+    "Updated ScheduleDefinition SCH-COLUMN.",
+    "Updated ScheduleDefinition SCH-BEAM.",
+    "Updated ScheduleDefinition SCH-STEEL.",
+    "Updated ScheduleDefinition SCH-MATERIAL.",
+    "Updated SheetDefinition SHT-S-001.",
+    "Updated SheetDefinition SHT-S-002."
+  ]
+}

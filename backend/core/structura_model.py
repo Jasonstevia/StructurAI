@@ -65,6 +65,27 @@ class Footing(BaseModel):
         return self.top_elevation_mm - self.depth_mm
 
 
+class StripFooting(BaseModel):
+    id: str
+    start: Point2D
+    end: Point2D
+    width_mm: float = Field(gt=0)
+    depth_mm: float = Field(gt=0)
+    top_elevation_mm: float
+    concrete_grade: str = "C30"
+    rebar: list[RebarSpec] = Field(default_factory=list)
+
+    @property
+    def bottom_elevation_mm(self) -> float:
+        return self.top_elevation_mm - self.depth_mm
+
+    @model_validator(mode="after")
+    def check_length(self) -> "StripFooting":
+        if self.start.x == self.end.x and self.start.y == self.end.y:
+            raise ValueError("strip footing start and end cannot be equal")
+        return self
+
+
 class Column(BaseModel):
     id: str
     center: Point2D
@@ -115,6 +136,52 @@ class Slab(BaseModel):
         return value
 
 
+class Wall(BaseModel):
+    id: str
+    start: Point2D
+    end: Point2D
+    thickness_mm: float = Field(gt=0)
+    base_elevation_mm: float
+    top_elevation_mm: float
+    wall_type: Literal["rc_shear_wall", "rc_core_wall", "masonry_infill", "retaining_wall"] = "rc_shear_wall"
+    concrete_grade: str = "C30"
+    rebar: list[RebarSpec] = Field(default_factory=list)
+
+    @model_validator(mode="after")
+    def check_geometry(self) -> "Wall":
+        if self.start.x == self.end.x and self.start.y == self.end.y:
+            raise ValueError("wall start and end cannot be equal")
+        if self.top_elevation_mm <= self.base_elevation_mm:
+            raise ValueError("wall top_elevation_mm must exceed base_elevation_mm")
+        return self
+
+
+class Opening(BaseModel):
+    id: str
+    host_id: str
+    center: Point2D
+    width_mm: float = Field(gt=0)
+    height_mm: float = Field(gt=0)
+    sill_elevation_mm: float = 0.0
+    opening_type: Literal["door", "window", "services", "access_panel"] = "door"
+
+
+class SteelMember(BaseModel):
+    id: str
+    member_type: Literal["column", "beam", "brace", "platform", "purlin", "pipe_support", "misc"]
+    start: Point3D
+    end: Point3D
+    section: str
+    material_grade: str = "S275"
+    connection_note: str = ""
+
+    @model_validator(mode="after")
+    def check_length(self) -> "SteelMember":
+        if self.start.x == self.end.x and self.start.y == self.end.y and self.start.z == self.end.z:
+            raise ValueError("steel member start and end cannot be equal")
+        return self
+
+
 class SectionMarker(BaseModel):
     id: str
     label: str
@@ -138,6 +205,8 @@ class DetailCallout(BaseModel):
         "column_reinforcement",
         "roof_slab_reinforcement",
         "section_reinforcement",
+        "wall_reinforcement",
+        "core_wall_opening",
         "material_build_up",
     ]
     title: str
@@ -148,7 +217,7 @@ class DetailCallout(BaseModel):
 
 class ScheduleDefinition(BaseModel):
     id: str
-    schedule_type: Literal["bar_bending", "footing", "column", "beam", "material_takeoff"]
+    schedule_type: Literal["bar_bending", "footing", "strip_footing", "column", "beam", "wall", "opening", "steel_member", "material_takeoff"]
     title: str
     source_entity_ids: list[str] = Field(default_factory=list)
 
@@ -173,7 +242,7 @@ class DraftingStandard(BaseModel):
 
 class DrawingView(BaseModel):
     id: str
-    view_type: Literal["foundation_plan", "roof_framing_plan", "section", "detail", "schedule"]
+    view_type: Literal["foundation_plan", "floor_framing_plan", "roof_framing_plan", "section", "detail", "schedule"]
     title: str
     scale: str = "1:50"
     notes: list[str] = Field(default_factory=list)
@@ -208,9 +277,13 @@ class StructuraProject(BaseModel):
     levels: list[Level] = Field(default_factory=list)
     grid_lines: list[GridLine] = Field(default_factory=list)
     footings: list[Footing] = Field(default_factory=list)
+    strip_footings: list[StripFooting] = Field(default_factory=list)
     columns: list[Column] = Field(default_factory=list)
     beams: list[Beam] = Field(default_factory=list)
     slabs: list[Slab] = Field(default_factory=list)
+    walls: list[Wall] = Field(default_factory=list)
+    openings: list[Opening] = Field(default_factory=list)
+    steel_members: list[SteelMember] = Field(default_factory=list)
     drawing_package: DrawingPackage = Field(default_factory=DrawingPackage)
     extracted_context: ExtractedContext | None = None
     assumptions: list[str] = Field(default_factory=list)
@@ -222,9 +295,13 @@ class StructuraProject(BaseModel):
             self.levels,
             self.grid_lines,
             self.footings,
+            self.strip_footings,
             self.columns,
             self.beams,
             self.slabs,
+            self.walls,
+            self.openings,
+            self.steel_members,
             self.drawing_package.views,
             self.drawing_package.dimensions,
             self.drawing_package.sections,

@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "score": 87,
+  "issues": [
+    {
+      "code": "TEXT_OVERLAP_RISK",
+      "severity": "warning",
+      "message": "Approximate text overlap count is high: 101."
+    },
+    {
+      "code": "PREVIEW_RENDER_FALLBACK",
+      "severity": "warning",
+      "message": "Used lightweight preview renderer because full CAD preview failed: No module named 'PIL'"
+    }
+  ],
+  "entity_counts": {
+    "TEXT": 946,
+    "LINE": 1626,
+    "CIRCLE": 52,
+    "HATCH": 87,
+    "LWPOLYLINE": 401
+  },
+  "layer_count": 20,
+  "extents": {
+    "min_x": -1230.0,
+    "min_y": -122965.50545702592,
+    "max_x": 54940.59686221009,
+    "max_y": 18360.0
+  },
+  "image_metrics": {},
+  "preview_path": "outputs\\assessment-own-engine-core-3story\\structurai_preview.png"
+}
